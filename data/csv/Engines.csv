@@ -1,0 +1,6 @@
+id,name,fuel_type,fuel_ratio,ignition_count,pressure_requirement,thrust (ASL),isp (ASL),thrust (Vac),isp (Vac),image_reference
+1,RD-0203,UDMH/NTO,1:1.437,1,0,499.6,278,558.9,331,static/images/engines/RD-0203.png
+2,RD-0206,UDMH/NTO,1:1.402,1,0,425.4,241,575.5,326,static/images/engines/RD-0206.png
+3,RD-0207,UDMH/NTO,1.008:1,1,0,4,152,7.7,297,static/images/engines/RD-0207.png
+4,RD-253,UDMH/NTO,1:1.477,1,0,1393.2,284.5,1545,315.5,static/images/engines/RD-253.png
+5,S1.5400/11D33,Kerosene/Liquid Oxygen,1:1.684,5,0,33,168,67.3,342.2,static/images/engines/S1.5400-11D33.png
