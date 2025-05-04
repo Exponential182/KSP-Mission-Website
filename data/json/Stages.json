@@ -1,0 +1,110 @@
+﻿[
+    {
+        "id": "1",
+        "name": "URS-100-1A",
+        "description": "The first stage of the UR-100A, utilising 2 RD-0203. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the first stage of the UR-200, an ICBM developed by the Soviet Union in the 1960s.",
+        "top_diameter": "3",
+        "bottom_diameter": "3",
+        "length": "7.3",
+        "engine_count": "2",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-100-1A.png",
+        "engines": "[1]"
+    },
+    {
+        "id": "2",
+        "name": "URS-100-2A",
+        "description": "The upper stage of the UR-100A, utilising 1 RD-0206 main engine and 4 RD-0207 vernier engines. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the third stage of the UR-500 (Proton) rocket developed in the Soviet Union.",
+        "top_diameter": "2.2",
+        "bottom_diameter": "3",
+        "length": "3",
+        "engine_count": "5",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-100-2A.png",
+        "engines": "[2,3]"
+    },
+    {
+        "id": "3",
+        "name": "URS-200-1A",
+        "description": "The first stage of the UR-200A, utilising 4 RD-0203. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the first stage of the UR-200, an ICBM developed by the Soviet Union in the 1960s.",
+        "top_diameter": "3",
+        "bottom_diameter": "3",
+        "length": "13",
+        "engine_count": "4",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-200-1A.png",
+        "engines": "[1]"
+    },
+    {
+        "id": "4",
+        "name": "URS-200-2A",
+        "description": "The upper stage of the UR-200A, utilising 1 RD-0206 main engine and 4 RD-0207 vernier engines. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the third stage of the UR-500 (Proton) rocket developed in the Soviet Union.",
+        "top_diameter": "3",
+        "bottom_diameter": "3",
+        "length": "3.4",
+        "engine_count": "5",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-200-2A.png",
+        "engines": "[2,3]"
+    },
+    {
+        "id": "5",
+        "name": "URS-350-1A",
+        "description": "The first stage of the UR-350A, utilising 3 RD-253 engines. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the first stage of the UR-500 (Proton) rocket developed in the Soviet Union.",
+        "top_diameter": "4",
+        "bottom_diameter": "4",
+        "length": "11",
+        "engine_count": "3",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-350-1A.png",
+        "engines": "[4]"
+    },
+    {
+        "id": "6",
+        "name": "URS-350-2A",
+        "description": "The second stage of the UR-350A, utilising 3 RD-0203. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the first stage of the UR-200, an ICBM developed by the Soviet Union in the 1960s.",
+        "top_diameter": "3",
+        "bottom_diameter": "4",
+        "length": "7",
+        "engine_count": "3",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-350-2A.png",
+        "engines": "[1]"
+    },
+    {
+        "id": "7",
+        "name": "URS-350-3A",
+        "description": "The third stage of the UR-350A, utilising 1 RD-0206 main engine and 4 RD-0207 vernier engines. Fueled by unsymmetric dimethyl hydrazine and nitrogen tetroxide propellants, these engines were historically used on the third stage of the UR-500 (Proton) rocket developed in the Soviet Union.",
+        "top_diameter": "3",
+        "bottom_diameter": "3",
+        "length": "3.3",
+        "engine_count": "5",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/URS-350-3A.png",
+        "engines": "[2,3]"
+    },
+    {
+        "id": "8",
+        "name": "Pegasus-B",
+        "description": "A common kick stage used for commercial satellite missions and light lunar missions. Powered by the S1.5400 engine in its 11D33 configuration, it is primarily used for commercial satellite targeting tundra orbits launched on the UR-200A.",
+        "top_diameter": "1.5",
+        "bottom_diameter": "1.5",
+        "length": "1.7",
+        "engine_count": "1",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/Pegasus-B.png",
+        "engines": "[5]"
+    },
+    {
+        "id": "9",
+        "name": "Pegasus-C",
+        "description": "A kick stage used for the second generation of lunar probes (Luna 14-21). Powered by the S1.5300 engine in its 11D33 configuration, it performs the TLI and braking burns in lunar missions but could be applied to heavy commercial payloads.",
+        "top_diameter": "1.5",
+        "bottom_diameter": "1.5",
+        "length": "3",
+        "engine_count": "1",
+        "material": "Isogrid - Al Gridded",
+        "image_reference": "static/images/stages/Pegasus-C.png",
+        "engines": "[5]"
+    }
+]

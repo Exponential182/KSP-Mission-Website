@@ -1,0 +1,67 @@
+﻿[
+    {
+        "id": "1",
+        "name": "RD-0203",
+        "fuel_type": "UDMH/NTO",
+        "fuel_ratio": "1:1.437",
+        "ignition_count": "1",
+        "pressure_requirement": "0",
+        "thrust_ASL": "499.6",
+        "isp_ASL": "278",
+        "thrust_Vac": "558.9",
+        "isp_Vac": "331",
+        "image_reference": "static/images/engines/RD-0203.png"
+    },
+    {
+        "id": "2",
+        "name": "RD-0206",
+        "fuel_type": "UDMH/NTO",
+        "fuel_ratio": "1:1.402",
+        "ignition_count": "1",
+        "pressure_requirement": "0",
+        "thrust_ASL": "425.4",
+        "isp_ASL": "241",
+        "thrust_Vac": "575.5",
+        "isp_Vac": "326",
+        "image_reference": "static/images/engines/RD-0206.png"
+    },
+    {
+        "id": "3",
+        "name": "RD-0207",
+        "fuel_type": "UDMH/NTO",
+        "fuel_ratio": "1.008:1",
+        "ignition_count": "1",
+        "pressure_requirement": "0",
+        "thrust_ASL": "4",
+        "isp_ASL": "152",
+        "thrust_Vac": "7.7",
+        "isp_Vac": "297",
+        "image_reference": "static/images/engines/RD-0207.png"
+    },
+    {
+        "id": "4",
+        "name": "RD-253",
+        "fuel_type": "UDMH/NTO",
+        "fuel_ratio": "1:1.477",
+        "ignition_count": "1",
+        "pressure_requirement": "0",
+        "thrust_ASL": "1393.2",
+        "isp_ASL": "284.5",
+        "thrust_Vac": "1545",
+        "isp_Vac": "315.5",
+        "image_reference": "static/images/engines/RD-253.png"
+    },
+    {
+        "id": "5",
+        "name": "S1.5400/11D33",
+        "fuel_type": "Kerosene/Liquid Oxygen",
+        "fuel_ratio": "1:1.684",
+        "ignition_count": "5",
+        "pressure_requirement": "0",
+        "thrust_ASL": "33",
+        "isp_ASL": "168",
+        "thrust_Vac": "67.3",
+        "isp_Vac": "342.2",
+        "image_reference": "static/images/engines/S1.5400-11D33.png"
+    }
+]

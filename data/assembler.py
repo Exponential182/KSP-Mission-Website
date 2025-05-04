@@ -10,6 +10,10 @@ engines_url = "./data/csv/Engines.csv"
 images_url = "./data/csv/Images.csv"
 missions_url = "./data/csv/Missions.csv"
 stages_url = "./data/csv/Stages.csv"
+engines_json = "./data/json/Engines.json"
+images_json = "./data/json/Images.json"
+missions_json = "./data/json/Missions.json"
+stages_json = "./data/json/Stages.json"
 
 
 # A Function to wipe the database as the script relies on an empty database.
@@ -54,7 +58,7 @@ def engine_table_composer(database_link, csv_link):
     the engine table of database.
     """
     with sqlite3.connect(database_link) as conn:
-        with open(csv_link, newline="") as csv_engine:
+        with open(csv_link, newline="", mode="r", encoding='utf-8-sig') as csv_engine:
             reader = DictReader(csv_engine)
             # Read a row of data from the csv.
             for row in reader:
@@ -74,7 +78,7 @@ def image_table_composer(database_link, csv_link):
     the image table of database.
     """
     with sqlite3.connect(database_link) as conn:
-        with open(csv_link, newline="") as csv_image:
+        with open(csv_link, newline="", mode="r", encoding='utf-8-sig') as csv_image:
             reader = DictReader(csv_image)
             for row in reader:
                 # Gather and Prepare the column info.
@@ -102,19 +106,23 @@ def stage_table_composer(database_link, csv_link):
     the coresponding engine ids to the linking table.
     """
     with sqlite3.connect(database_link) as conn:
-        with open(csv_link, newline="") as csv_stage:
+        with open(csv_link, newline="", mode="r", encoding='utf-8-sig') as csv_stage:
             reader = DictReader(csv_stage)
             cursor = conn.cursor()
             for row in reader:
+                # Prepare the columns
                 columns = list(dict(row).keys())
-                values = list(dict(row).values())
-                linking_info = values[-1]
-                linking_info = linking_info.replace("[","").replace("]","")
-                linking_ids = list(map(int, linking_info.split(",")))
-                values.remove(values[-1])
                 columns.remove(columns[-1])
                 columns_to_insert = str(tuple(columns)).replace("'", "")
+                
+                # Prepare the values and linking ids.
+                values = list(dict(row).values())
+                linking_info = values[-1]
+                values.remove(values[-1])
                 values_to_insert = convert_numerics_to_int_float(values)
+                linking_info = linking_info.replace("[","").replace("]","")
+                linking_ids = list(map(int, linking_info.split(",")))
+
                 cursor.execute(f"INSERT INTO Stage {columns_to_insert} VALUES (?,?,?,?,?,?,?,?,?)", values_to_insert)
                 for i in linking_ids:
                     cursor.execute(f"INSERT INTO StageEngine (stage_id, engine_id) VALUES(?,?)", (values[0], i))
@@ -125,28 +133,49 @@ def mission_table_composer(database_link, csv_link):
     adding the coresponding stage ids to the linking table.
     """
     with sqlite3.connect(database_link) as conn:
-        with open(csv_link, newline="", encoding='utf-8-sig') as csv_mission:
+        with open(csv_link, newline="", encoding='utf-8-sig', mode="r") as csv_mission:
             reader = DictReader(csv_mission)
             cursor = conn.cursor()
             for row in reader:
+                # Prepare the columns
                 columns = list(dict(row).keys())
-                values = list(dict(row).values())
-                linking_info = values[-1]
-                linking_info = linking_info.replace("[","").replace("]","")
-                linking_ids = list(map(int, linking_info.split(",")))
-                values.remove(values[-1])
                 columns.remove(columns[-1])
                 columns_to_insert = str(tuple(columns)).replace("'", "")
+                
+                #Prepare the values and linking ids.
+                values = list(dict(row).values())
+                linking_info = values[-1]
+                values.remove(values[-1])
                 values_to_insert = convert_numerics_to_int_float(values)
+                linking_info = linking_info.replace("[","").replace("]","")
+                linking_ids = list(map(int, linking_info.split(",")))
+
                 cursor.execute(f"INSERT INTO Mission {columns_to_insert} VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", values_to_insert)
                 for i in linking_ids:
                     cursor.execute(f"INSERT INTO MissionStage (mission_id, stage_id) VALUES(?,?)", (values[0], i))
 
 
+def json_dumper(csv_file, json_file):
+    # Read the csv file and convert it to a list of dictionaries.
+    with open(csv_file, mode="r", encoding="utf-8-sig", newline="") as csv_reader:
+        reader = DictReader(csv_reader)
+        data = list(reader)
+    
+    # Write the data to json
+    with open(json_file, encoding="utf-8-sig", mode="w") as json_file:
+        json.dump(data, json_file, indent=4)
 
 
+# Establishes the database in such a way that the linking tables can be 
+# composed without referecing empty keys
 clear_db(database_url)
 engine_table_composer(database_url, engines_url)
 stage_table_composer(database_url, stages_url)
 mission_table_composer(database_url, missions_url)
 image_table_composer(database_url, images_url)
+
+# Parse the data in JSON files to make the changes more readable in Git.
+json_dumper(engines_url, engines_json)
+json_dumper(images_url, images_json)
+json_dumper(stages_url, stages_json)
+json_dumper(missions_url, missions_json)

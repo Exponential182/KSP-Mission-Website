@@ -1,0 +1,356 @@
+﻿[
+    {
+        "id": "1",
+        "url": "static/images/inflight-images/luna-14/Luna-14-pad.png",
+        "caption": "The Luna 14 vehicle on the launch pad, awaiting launch.",
+        "related_mission_ids": "[1]"
+    },
+    {
+        "id": "2",
+        "url": "static/images/inflight-images/luna-14/Luna-14-ascent.png",
+        "caption": "The Luna 14 vehicle on the launch pad, awaiting launch.",
+        "related_mission_ids": "[1]"
+    },
+    {
+        "id": "3",
+        "url": "static/images/inflight-images/luna-15/Luna-15-pad.png",
+        "caption": "The Luna 15 launch vehicle awaits its launch window in the night.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "4",
+        "url": "static/images/inflight-images/luna-15/Luna-15-ascent1.png",
+        "caption": "The Luna 15 vehicle rising off the pad, exhaust plumes filling the launch complex",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "5",
+        "url": "static/images/inflight-images/luna-15/Luna-15-ascent2.png",
+        "caption": "Stage separation between the first and second stage, with the interstage splitting away from the vehicle.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "6",
+        "url": "static/images/inflight-images/luna-15/Luna-15-ascent3.png",
+        "caption": "The launch vehicle rising above the North Island of New Zealand after its launch from the Mahia Peninsula.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "7",
+        "url": "static/images/inflight-images/luna-15/Luna-15-payload-deploy.png",
+        "caption": "The Luna 15 payload separates from its upper stage over South America.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "8",
+        "url": "static/images/inflight-images/luna-15/Luna-15-deep-space.png",
+        "caption": "The Luna 15 spacecraft travelling to the Moon, looking back on Earth.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "9",
+        "url": "static/images/inflight-images/luna-15/Luna-15-moon-descent.png",
+        "caption": "The spacecraft begins its terminal approach to the lunar surface.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "10",
+        "url": "static/images/inflight-images/luna-15/Luna-15-final-approach.png",
+        "caption": "The Luna 15 spacecraft begins the last 20 seconds of its braking burn before touchdown.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "11",
+        "url": "static/images/inflight-images/luna-15/Luna-15-landed.png",
+        "caption": "The Luna 15 spacecraft is safely on the lunar surface with the Earth in the background, the majority of its scientific mission completed.",
+        "related_mission_ids": "[2]"
+    },
+    {
+        "id": "12",
+        "url": "static/images/inflight-images/svet-15/Svet-15-pad.png",
+        "caption": "The Svet 15 payload atop the UR-200A rocket, moments before launch into the target orbital plane.",
+        "related_mission_ids": "[3]"
+    },
+    {
+        "id": "13",
+        "url": "static/images/inflight-images/svet-15/Svet-15-ascent1.png",
+        "caption": "The Svet 15 launch vehicle ascending over the space centre, all engines firing successfully.",
+        "related_mission_ids": "[3]"
+    },
+    {
+        "id": "14",
+        "url": "static/images/inflight-images/svet-15/Svet-15-ascent2.png",
+        "caption": "The Svet 15 launch vehicle moments after stage separation, with the first stage tumbling under the aerodynamic forces.",
+        "related_mission_ids": "[3]"
+    },
+    {
+        "id": "15",
+        "url": "static/images/inflight-images/svet-15/Svet-15-transfer.png",
+        "caption": "The transfer stage raises the apogee to twice the geostationary altitude.",
+        "related_mission_ids": "[3]"
+    },
+    {
+        "id": "16",
+        "url": "static/images/inflight-images/svet-15/Svet-15-payload-deploy.png",
+        "caption": "The spacecraft, gently spinning to maintain stability, is separated from the transfer stage to begin its on-orbit operations.",
+        "related_mission_ids": "[3]"
+    },
+    {
+        "id": "17",
+        "url": "static/images/inflight-images/luna-16/Luna-16-pad.png",
+        "caption": "The Luna 16 spacecraft on the launch pad, awaiting clearance to launch.",
+        "related_mission_ids": "[4]"
+    },
+    {
+        "id": "18",
+        "url": "static/images/inflight-images/luna-16/Luna-16-ascent1.png",
+        "caption": "The launch vehicle propels the spacecraft into its parking orbit. Stage separation is successful.",
+        "related_mission_ids": "[4]"
+    },
+    {
+        "id": "19",
+        "url": "static/images/inflight-images/luna-16/Luna-16-deployment.png",
+        "caption": "The Luna 16 spacecraft and its transfer stage flying free of the third stage, an issue with the vernier engines caused the stage to enter an uncontrolled spin, effectively ending the mission.",
+        "related_mission_ids": "[4]"
+    },
+    {
+        "id": "20",
+        "url": "static/images/inflight-images/luna-17/Luna-17-pad.png",
+        "caption": "The Luna 17 spacecraft rising off of the pad under the power of the UR-350A booster, powered by 3 RD-253 engines.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "21",
+        "url": "static/images/inflight-images/luna-17/Luna-17-ascent1.png",
+        "caption": "The UR-350A first stage suffers a launch failure with the first stage having one of its engines shut down ~1 minute earlier than expected.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "22",
+        "url": "static/images/inflight-images/luna-17/Luna-17-ascent2.png",
+        "caption": "The damaged first stage falls away from the second stage, we are still orbit-bound.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "23",
+        "url": "static/images/inflight-images/luna-17/Luna-17-transfer.png",
+        "caption": "The Luna 17 spacecraft completing its transfer burn over the northern coast of Australia.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "24",
+        "url": "static/images/inflight-images/luna-17/Luna-17-cruise.png",
+        "caption": "The Luna 17 spacecraft cruising in space, transiting to the moon, over point Nemo. This is the most remote point on Earth.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "25",
+        "url": "static/images/inflight-images/luna-17/Luna-17-lunar-approach1.png",
+        "caption": "Luna 17 transitioning into lunar space, the lunar descent has begun.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "26",
+        "url": "static/images/inflight-images/luna-17/Luna-17-lunar-approach2.png",
+        "caption": "Luna 17 beginning the terminal phase of its approach guidance. Should no action be taken, the spacecraft would impact the surface in minutes.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "27",
+        "url": "static/images/inflight-images/luna-17/Luna-17-braking-maneuver.png",
+        "caption": "The Luna 17 spacecraft screaming to a halt above the lunar surface, it will reduce its velocity to 0 m/s at an altitude of 1400m.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "28",
+        "url": "static/images/inflight-images/luna-17/Luna-17-landed.png",
+        "caption": "The Luna 17 spacecraft gently landed on the lunar surface, utilising its scientific payloads to further the program's understanding of our closest neighbour.",
+        "related_mission_ids": "[5]"
+    },
+    {
+        "id": "29",
+        "url": "static/images/inflight-images/svet-16/Svet-16-pad.png",
+        "caption": "The Svet 16 spacecraft atop its launch vehicle in the night sky, awaiting launch.",
+        "related_mission_ids": "[6]"
+    },
+    {
+        "id": "30",
+        "url": "static/images/inflight-images/svet-16/Svet-16-ascent1.png",
+        "caption": "The UR-200A launch vehicle rises above the launch complex into a near sunrise.",
+        "related_mission_ids": "[6]"
+    },
+    {
+        "id": "31",
+        "url": "static/images/inflight-images/svet-16/Svet-16-ascent2.png",
+        "caption": "The near sunrise silhouetting the stage separation of the vehicle.",
+        "related_mission_ids": "[6]"
+    },
+    {
+        "id": "32",
+        "url": "static/images/inflight-images/svet-16/Svet-16-transfer.png",
+        "caption": "The Pegasus-B kick stage inserting the payload into its target orbit.",
+        "related_mission_ids": "[6]"
+    },
+    {
+        "id": "33",
+        "url": "static/images/inflight-images/svet-16/Svet-16-deployment.png",
+        "caption": "The Svet 16 satellite is spin-stabilised and deployed into its operational communications orbit.",
+        "related_mission_ids": "[6]"
+    },
+    {
+        "id": "34",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-pad.png",
+        "caption": "The Pioneer 3 spacecraft atop its specially painted UR-350A awaiting launch from Mahia Peninsula on its mission to Mercury.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "35",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-ascent1.png",
+        "caption": "The first stage of the UR-350A is successfully ignited and the vehicle rises away from the pad.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "36",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-ascent2.png",
+        "caption": "A successful stage separation is completed as the first stage depletes is fuel and is flung away.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "37",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-ascent3.png",
+        "caption": "The third stage successfully fires, detaching the second stage and payload fairing. The antenna and solar panel are deployed.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "38",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-transfer.png",
+        "caption": "The Pegasus-C kick stage burns over South Africa to send the spacecraft on its way to Mercury, this requires the majority of the fuel in the stage to achieve.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "39",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-payload-deploy.png",
+        "caption": "Following a successful burn to Mercury, the Pegasus-C kick stage points the spacecraft towards the sun, spin stabilises it, and deploys the payload.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "40",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-departing.png",
+        "caption": "The Pioneer 3 spacecraft departing Earth, hovering over Australia and the Indian Ocean.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "41",
+        "url": "static/images/inflight-images/luna-18/Luna-18-ascent1.png",
+        "caption": "The UR-350A rocket rising over the launch complex, carrying the Luna 18 mission to orbit.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "42",
+        "url": "static/images/inflight-images/luna-18/Luna-18-ascent2.png",
+        "caption": "The first stage of the UR-350A burnout and the second stage fires, sending the first stage spiralling into a watery demise in the Pacific Ocean.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "43",
+        "url": "static/images/inflight-images/luna-18/Luna-18-ascent3.png",
+        "caption": "The second stage of the UR-350A runs out of fuel as is sentenced to the same fate as the first stage.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "44",
+        "url": "static/images/inflight-images/luna-18/Luna-18-TLI.png",
+        "caption": "The Pegasus-C kick stage fires to send the Luna 18 spacecraft towards the moon.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "45",
+        "url": "static/images/inflight-images/luna-18/Luna-18-outward-coast.png",
+        "caption": "The Luna 18 spacecraft is left to tumble on its way to the Moon, awaiting more advanced guidance in lunar space to fine tune the landing site.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "46",
+        "url": "static/images/inflight-images/luna-18/Luna-18-braking.png",
+        "caption": "The Pegasus-C ignites its S1.5400/11D33 engine to slow the spacecraft from ~2.3 km/s to ~100m/s to allow the spacecraft to gently land on the lunar surface.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "47",
+        "url": "static/images/inflight-images/luna-18/Luna-18-final-burn.png",
+        "caption": "The Luna 18 spacecraft ignites its landing engines and slows to ~2m/s, allowing it to gently touchdown on the surface of the Moon.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "48",
+        "url": "static/images/inflight-images/luna-18/Luna-18-touchdown.png",
+        "caption": "The Luna 18 spacecraft touched down in Mare Imbrium during the lunar sunrise on the 19th of October 1963.",
+        "related_mission_ids": "[8]"
+    },
+    {
+        "id": "49",
+        "url": "static/images/inflight-images/luna-19/Luna-19-ascent1.png",
+        "caption": "The Luna 19 communications network atop its UR-350A launch vehicle rises above the launch complex.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "50",
+        "url": "static/images/inflight-images/luna-19/Luna-19-ascent2.png",
+        "caption": "The second stage of the UR-350A propels the Luna 19 network into space, increasing its velocity to ~4 km/s.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "51",
+        "url": "static/images/inflight-images/luna-19/Luna-19-ascent3.png",
+        "caption": "The third stage of the UR-350A places the Luna 19 bus into orbit, deploying communications and solar systems.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "52",
+        "url": "static/images/inflight-images/luna-19/Luna-19-seperation.png",
+        "caption": "The Luna 19 network and its Pegasus-C kick stage are released from the URS-350-3A.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "53",
+        "url": "static/images/inflight-images/luna-19/Luna-19-TLI.png",
+        "caption": "The Pegasus-C kick stage propels the spacecraft into a trans lunar trajectory.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "54",
+        "url": "static/images/inflight-images/luna-19/Luna-19-final-orbit.png",
+        "caption": "The Luna 19 C spacecraft in its final lunar orbit, providing useful communications to any far-side lunar spacecraft.",
+        "related_mission_ids": "[9]"
+    },
+    {
+        "id": "55",
+        "url": "static/images/inflight-images/svet-17/Svet-17-pad.png",
+        "caption": "The Svet 17 spacecraft atop its UR-200A launch vehicle with the space centre in view.",
+        "related_mission_ids": "[10]"
+    },
+    {
+        "id": "56",
+        "url": "static/images/inflight-images/svet-17/Svet-17-ascent1.png",
+        "caption": "The first and second stages of the UR-200A launch vehicle separate, continuing to propel the spacecraft into orbit.",
+        "related_mission_ids": "[10]"
+    },
+    {
+        "id": "57",
+        "url": "static/images/inflight-images/svet-17/Svet-17-ascent2.png",
+        "caption": "The second stage of the UR-200A flying over the South Island of New Zealand. This spacecraft's unusual trajectory increases the risk of debris flying over populated areas.",
+        "related_mission_ids": "[10]"
+    },
+    {
+        "id": "58",
+        "url": "static/images/inflight-images/svet-17/Svet-17-transfer.png",
+        "caption": "The Pegasus-B kick stage burns over the north of Canada to place the spacecraft into a tundra orbit.",
+        "related_mission_ids": "[10]"
+    },
+    {
+        "id": "59",
+        "url": "static/images/inflight-images/svet-17/Svet-17-deployment.png",
+        "caption": "The Svet 17 spacecraft is released, with its solar panels facing the sun and a gentle stabilising spin established.",
+        "related_mission_ids": "[10]"
+    }
+]
