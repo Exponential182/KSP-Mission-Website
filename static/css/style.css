@@ -1,0 +1,36 @@
+html{
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Space Mono", monospace;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) 4fr 1fr 1fr; 
+    background-color: #2E573A;
+    font-size: auto;
+}
+
+.nav-bar a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color: #F5F5F5;
+    font-family: "Open Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 650;
+    padding: 1rem 0.6rem;
+}
+
+.nav-bar :hover{
+    background-color: #162654;
+}

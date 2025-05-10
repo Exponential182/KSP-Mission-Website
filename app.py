@@ -6,7 +6,22 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("layout.html")
+    return render_template("home.html", title="KSP Mission Library")
+
+
+@app.route("/missions")
+def missions():
+    return render_template("missions.html", title="KSP Mission Library")
+
+
+@app.route("/engines")
+def engines():
+    return render_template("engines.html", title="KSP Mission Library")
+
+
+@app.route("/stages")
+def stages():
+    return render_template("stages.html", title="KSP Mission Library")
 
 
 @app.errorhandler(404)
