@@ -13,9 +13,10 @@ h1, h2, h3, h4, h5, h6{
     font-family: "Space Mono", monospace;
 }
 
+/* Nav Bar */
 .nav-bar {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) 4fr 1fr 1fr; 
+    grid-template-columns: repeat(5, 1fr) 4fr 1fr 1fr; 
     background-color: #2E573A;
     font-size: auto;
 }
@@ -26,11 +27,26 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
     color: #F5F5F5;
     font-family: "Open Sans", sans-serif;
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: 650;
     padding: 1rem 0.6rem;
 }
 
-.nav-bar :hover{
+.nav-bar a:hover{
     background-color: #162654;
+}
+
+/* Hero Section */
+.hero-section{
+    background-image: url("../images/decorative-images/spacecraft-earth.png");
+    margin: 0;
+    height: 35rem;
+}
+
+.hero-text{
+    margin: 0;
+    vertical-align: middle;
+    text-align: center;
+    color: #F5F5F5;
+    font-size: 3rem;
 }
