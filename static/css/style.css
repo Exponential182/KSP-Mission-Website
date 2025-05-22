@@ -1,8 +1,9 @@
 html{
     display: inline-block;
-    font-family: "Open Sans", sans-serif;
-    padding: 0%;
+    font-family: "Open Sans", monospace;
+    
     margin: 0%;
+    padding: 0%;
 }
 
 body{
@@ -36,17 +37,76 @@ h1, h2, h3, h4, h5, h6{
     background-color: #162654;
 }
 
+/* Footer */
+.footer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    background-color: #2E573A;
+    color: #F5F5F5;
+    place-items: center;
+}
+
+.footer a{
+    display: inline;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #F5F5F5;
+    padding: 5% 0% 5% 0%;
+    width: 100%;
+}
+
+.footer a:hover{
+    background-color: #0D0D0D;
+}
+
+
 /* Hero Section */
 .hero-section{
     background-image: url("../images/decorative-images/spacecraft-earth.png");
-    margin: 0;
-    height: 35rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60vh
 }
 
 .hero-text{
-    margin: 0;
     vertical-align: middle;
     text-align: center;
     color: #F5F5F5;
-    font-size: 3rem;
+    font-size: 2.7rem;
+    position: relative;
+    top: 10vh;
+    font-weight: 800;
+}
+
+.hero-text h1{
+    margin: 0;
+    -webkit-text-stroke: #3357C1 .2rem;
+}
+
+/* 2 Column Grid */
+.two-column-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: linear-gradient(#162654, #3357C1, #162654);
+}
+
+.two-column-column{
+    padding: 0% 5%;
+    color: #F5F5F5;
+}
+
+.two-column-column p{
+    font-size: 1.1rem;
+}
+
+.top-text{
+    color: #F5F5F5;
+    text-align: center;
+    background: linear-gradient(#2E573A, #162654);
+}
+
+.top-text h1, h2, h3, h4, h5, h6{
+    margin: 0%;
 }

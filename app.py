@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import os
 
 
 app = Flask(__name__)
@@ -22,6 +23,21 @@ def engines():
 @app.route("/stages")
 def stages():
     return render_template("stages.html", title="KSP Mission Library")
+
+
+@app.route("/license")
+def license():
+    return render_template("license.html", title="KSP Mission Library")
+
+
+@app.route("/glossary")
+def glossary():
+    return render_template("glossary.html", title="KSP Mission Library")
+
+
+@app.route("/sitemap")
+def sitemap():
+    return render_template("sitemap.html", title="KSP Mission Library")
 
 
 @app.errorhandler(404)

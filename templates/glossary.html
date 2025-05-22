@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+{%block content%}
+<div class="top-text">
+    <br>
+    <h2>Glossary</h2>
+    <br>
+    <br>
+    <h4>This section aims to detail techincal temrs which are frequently used on the website.</h4>
+    <br>
+</div>
+<section class="two-column-grid">
+    <div class="two-column-column">
+        <h2>
+            Orbital and Planetary Terms
+        </h2>
+        <p>
+            <strong>Primary Body:</strong> The celestial body (star, planet, moon, etc) that has the largest gravitational influence on the spacecraft.
+            <strong>Orbit:</strong> A circular, or elliptical path around the primary body of the spacecraft; this is the result of moving fast enough that you fall and miss the Earth. <br><br>
+            <strong>Hyperbolic Trajectory:</strong> A trajectory in which the spacecraft has enough energy to escape the gravitational influence of the primary body and enter the gravitational influence of the primary body’s primary body (For the Earth, the primary body is the Sun. For the Moon, the primary body is the Earth.) <br><br>
+            <strong>Fundamental Orbital Parameters:</strong> The Semi-Major Axis, Eccentricity, Inclination, Longitude of the Ascending Node, and the Argument of Periapsis are the fundamental orbital parameters which uniquely separate all possible orbits of a Primary Body. Along with the Planetary Characteristics, it uniquely determines any orbit from any other orbit. <br><br>
+            <strong>Apoapsis:</strong> The largest distance from the primary body’s surface in an orbit. (measured in meters) <br><br>
+            <strong>Periapsis:</strong> The smallest distance from the primary body’s surface in an orbit. (measured in meters) <br><br>
+            <strong>Semi-Major Axis:</strong> Half the distance between the Periapsis and Apoapsis, this includes the diameter of the Primary body (While Apoapsis and periapsis do not) (measured in meters) <br><br>
+            <strong>Orbital Period:</strong> The time taken to complete one full orbit of a celestial body. (measured in seconds) <br><br>
+            <strong>Eccentricity:</strong> A measure of how circular the orbit is. At 0, it means a perfectly circular path. For values between 0 and 1, it represents an elliptical orbit, and for values above 1, it represents a hyperbolic trajectory. <br><br>
+            <strong>Inclination:</strong> A measure of the tilt of an orbit, with 0 degrees being along the equator in the direction of rotation and 180 degrees being along the equator opposing the direction of rotation. It also indicates the maximum latitude that the satellite will fly over. (measured in degrees) <br><br>
+            <strong>Longitude of the Ascending Node:</strong> The longitude of the point in an orbit when you pass the equator moving upwards at a fixed point in time. This is used to differentiate between the infinite range of orbits of a given inclination. (measured in degrees) <br><br>
+            <strong>Argument of Periapsis:</strong> The angle between the longitude of the ascending node and the lowest point in the orbit. (measured in degrees) <br><br>
+            <strong>Attitude:</strong> The direction of a spacecraft in 3d space. <br><br>
+        </p>
+    </div>
+    <div class="two-column-column">
+        <h2>
+            Rocket Science Terms
+        </h2>
+        <p>
+            <strong>Thrust:</strong> The amount of force applied by an engine, measured in kilonewtons (kN) <br><br>
+            <strong>Specific Impulse:</strong> A measure of the efficiency of a rocket engine and defined as the amount of time that an engine can produce 1kg of thrust from 1 kg of propellant. The greater the specific impulse, the greater the change in velocity that can be achieved for a certain mass of propellant. (measured in seconds) <br><br>
+            <strong>Engine:</strong> Any system aboard a spacecraft which uses chemical, nuclear, or electrical reactions to affect the velocity of the spacecraft, this sometimes includes small engines called RCS engines (Reaction Control System) which are primarily used for changing the attitude of the spacecraft or stage. <br><br>
+            <strong>Launch Vehicle:</strong> A composite vehicle designed to lift a payload into orbit around the Earth. This is often discarded after reaching orbit, but sometimes persists if the final stage of a launch vehicle is useful for further manoeuvres. <br><br>
+            <strong>Stage:</strong> A part of a payload/launch vehicle that has engines and fuel, these are sequentially separated from the the rest of the payload as it is more mass efficient to discard the weight of the control electronics, engines, and empty fuel tanks.
+            <strong>Payload:</strong> The spacecraft, satellites, or crew capsules delivered somewhere by a vehicle. <br><br>
+            <strong>Performance:</strong> The performance of a vehicle or stage is an indicator of the amount of payload which can be delivered to a given location, this is often measured in mass to a given orbit such as Low Earth Orbit (a minimum energy orbit), Geostationary Earth Orbit (an orbit such that you remain stationary over a fixed point on the surface), Trans Lunar Injection (an orbit which will encounter the moon) or any other destination. <br><br>
+        </p>
+    </div>
+</section>
+{%endblock%}
