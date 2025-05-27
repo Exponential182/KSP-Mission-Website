@@ -1,9 +1,9 @@
 html{
     display: inline-block;
     font-family: "Open Sans", monospace;
-    
     margin: 0%;
     padding: 0%;
+    overflow: scroll;
 }
 
 body{
@@ -28,9 +28,9 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
     color: #F5F5F5;
     font-family: "Open Sans", sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8vw;
     font-weight: 650;
-    padding: 1rem 0.6rem;
+    padding: 0.6em 0.3em;
 }
 
 .nav-bar a:hover{
@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6{
     vertical-align: middle;
     text-align: center;
     color: #F5F5F5;
-    font-size: 2.7rem;
+    font-size: 3vw;
     position: relative;
     top: 10vh;
     font-weight: 800;
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6{
 
 .hero-text h1{
     margin: 0;
-    -webkit-text-stroke: #3357C1 .2rem;
+    -webkit-text-stroke: #3357C1 .05em;
 }
 
 /* 2 Column Grid */
@@ -101,6 +101,7 @@ h1, h2, h3, h4, h5, h6{
     font-size: 1.1rem;
 }
 
+/* Page Headings */
 .top-text{
     color: #F5F5F5;
     text-align: center;
@@ -109,4 +110,19 @@ h1, h2, h3, h4, h5, h6{
 
 .top-text h1, h2, h3, h4, h5, h6{
     margin: 0%;
+}
+
+/* All Data Sections. For all mission, stage, and engine pages. */
+.all-data-type{
+    background-color: #F5F5F5;
+}
+
+.all-data-type-header{
+    margin: 0%;
+    padding: 2%;
+    font-size: 3em;
+    color: #F5F5F5;
+    text-align: center;
+    -webkit-text-stroke: 1.4px #3357C1;
+    background: linear-gradient(#2E573A, #607F68, #F5F5F5);
 }
