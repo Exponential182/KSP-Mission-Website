@@ -126,3 +126,15 @@ h1, h2, h3, h4, h5, h6{
     -webkit-text-stroke: 1.4px #3357C1;
     background: linear-gradient(#2E573A, #607F68, #F5F5F5);
 }
+
+.three-column-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5vw;
+    padding: 4vh 5vw;
+
+}
+
+.three-column-grid img{
+    width: 50%;
+}

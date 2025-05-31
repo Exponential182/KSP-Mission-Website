@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import sqlite3
 import os
 
-
 app = Flask(__name__)
 database = "ksp.db"
 
@@ -20,7 +19,7 @@ def missions():
     cursor.execute("SELECT name, launch_vehicle, mission_goal, payload_image_reference FROM Mission ORDER BY name ASC")
     results = cursor.fetchall()
     print(results)
-    return render_template("missions.html", title="KSP Mission Library")
+    return render_template("missions.html", title="KSP Mission Library", data=results)
 
 
 # @app.route("/mission/<id:int>")

@@ -2,8 +2,13 @@
 {%block content%}
 <section class="all-data-type">
     <h1 class="all-data-type-header">All Missions</h1>
-    <div class="3-column-grid">
-        
+    <div class="three-column-grid">
+        {%for i in data%}
+        <div>
+            <img src="{{i[3]}}" alt="Payload Image">
+            <h1>Name: {{i[0]}}</h1>
+        </div>
+        {%endfor%}
     </div>
 </section>
 
