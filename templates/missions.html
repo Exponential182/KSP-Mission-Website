@@ -1,15 +1,25 @@
 {% extends "layout.html" %}
 {%block content%}
+
 <section class="all-data-type">
     <h1 class="all-data-type-header">All Missions</h1>
-    <div class="three-column-grid">
+    <div class="four-column-grid">
         {%for i in data%}
-        <div>
-            <img src="{{i[3]}}" alt="Payload Image">
-            <h1>Name: {{i[0]}}</h1>
-        </div>
+            <div class="info-card">
+                <div>
+                    <img src="{{i[3]}}" class="responsive-image" alt="Payload Image">
+                </div>
+                <div>
+                    <h1>Name: {{i[0]}}</h1>
+                    <br>
+                    <h3>Launch Vehicle: {{i[1]}}</h3>
+                    <br>
+                    <h3>Mission Goal: {{i[2]}}</h3>
+                </div>
+                <a href="/mission/{{i[4]}}" class="info-card-escaped">More Details</a>
+            </div>
         {%endfor%}
     </div>
 </section>
-
+<script src="../static/scripts/aspect_ratio_hander.js"></script>
 {%endblock%}

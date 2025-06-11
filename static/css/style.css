@@ -4,6 +4,8 @@ html{
     margin: 0%;
     padding: 0%;
     overflow: scroll;
+    font-size: 2vw;
+    background-color: #2E573A;
 }
 
 body{
@@ -20,6 +22,7 @@ h1, h2, h3, h4, h5, h6{
     grid-template-columns: repeat(5, 1fr) 4fr 1fr 1fr; 
     background-color: #2E573A;
     font-size: auto;
+    width: 100%;
 }
 
 .nav-bar a{
@@ -45,6 +48,7 @@ h1, h2, h3, h4, h5, h6{
     background-color: #2E573A;
     color: #F5F5F5;
     place-items: center;
+    font-size: 0.6em;
 }
 
 .footer a{
@@ -85,6 +89,12 @@ h1, h2, h3, h4, h5, h6{
     -webkit-text-stroke: #3357C1 .05em;
 }
 
+/* Home Page */
+.intro-body {
+    background-color: #F5F5F5;
+}
+
+
 /* 2 Column Grid */
 .two-column-grid{
     display: grid;
@@ -120,21 +130,65 @@ h1, h2, h3, h4, h5, h6{
 .all-data-type-header{
     margin: 0%;
     padding: 2%;
-    font-size: 3em;
+    font-size: 2em;
     color: #F5F5F5;
     text-align: center;
-    -webkit-text-stroke: 1.4px #3357C1;
-    background: linear-gradient(#2E573A, #607F68, #F5F5F5);
+    -webkit-text-stroke: 0.04em #3357C1;
+    background-color: #365F42;
 }
 
-.three-column-grid{
+.four-column-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 5vw;
     padding: 4vh 5vw;
-
+    vertical-align: middle;
+    align-items: center;
 }
 
-.three-column-grid img{
-    width: 50%;
+.four-column-grid img{
+    width: 100%;
+}
+
+.info-card{
+    border: 0.3vw solid #0D0D0D;
+    border-radius: 3%;
+    font-size: 0.5em;
+    padding: 2.5%;
+    background-color: #2E573A;
+    color: #F5F5F5;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.info-card-escaped{
+    grid-column: 1 / -1;
+    align-items: center;
+    width: 100%;
+    font-size: 1.2em;
+    color: #F5F5F5;
+}
+
+.info-card h1{
+    margin: 2%;
+    font-size: 1.8em;
+}
+
+.responsive-image {
+    width: 100%;
+}
+
+.info-card.tall-image{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0%;
+    gap: 1vw;
+    height: fit-content;
+    vertical-align: middle;
+}
+
+.info-card.wide-image{
+    display: inline-block;
+    margin: 0%;
 }

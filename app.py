@@ -16,9 +16,8 @@ def home():
 def missions():
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute("SELECT name, launch_vehicle, mission_goal, payload_image_reference FROM Mission ORDER BY name ASC")
+    cursor.execute("SELECT name, launch_vehicle, mission_goal, payload_image_reference, id FROM Mission ORDER BY name ASC")
     results = cursor.fetchall()
-    print(results)
     return render_template("missions.html", title="KSP Mission Library", data=results)
 
 
