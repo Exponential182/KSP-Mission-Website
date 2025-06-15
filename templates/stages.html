@@ -1,2 +1,26 @@
 {% extends "layout.html" %}
-<h2>stages</h2>
+{%block content%}
+
+<section class="all-data-type">
+    <h1 class="all-data-type-header">All Stages</h1>
+    <div class="all-data-flex">
+        {%for i in data%}
+            <div class="info-card">
+                <div>
+                    <img src="{{i[3]}}" class="responsive-image" alt="Stage Image">
+                </div>
+                <div>
+                    <h1>Name: <br> {{i[0]}}</h1>
+                    <br>
+                    <h3>Length (metres): <br> {{i[1]}}</h3>
+                    <br>
+                    <h3>Average Diameter (metres): <br> {{i[2]}}</h3>
+                    <br>
+                    <a href="/stage/{{i[4]}}">More Details</a>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</section>
+<script src="../static/scripts/aspect_ratio_hander.js"></script>
+{%endblock%}

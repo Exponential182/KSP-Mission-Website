@@ -137,23 +137,28 @@ h1, h2, h3, h4, h5, h6{
     background-color: #365F42;
 }
 
-.four-column-grid{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5vw;
+.all-data-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
     padding: 4vh 5vw;
     vertical-align: middle;
     align-items: center;
+    background: linear-gradient(135deg, #365F42, #5e7f68, #365F42);
 }
 
-.four-column-grid img{
-    width: 100%;
+
+.all-data-flex img{
+    width: 80%;
+    align-items: middle;
 }
+
 
 .info-card{
     border: 0.3vw solid #0D0D0D;
     border-radius: 3%;
-    font-size: 0.5em;
+    font-size: 0.6em;
     padding: 2.5%;
     background-color: #2E573A;
     color: #F5F5F5;
@@ -162,17 +167,19 @@ h1, h2, h3, h4, h5, h6{
     text-align: center;
 }
 
-.info-card-escaped{
-    grid-column: 1 / -1;
-    align-items: center;
-    width: 100%;
-    font-size: 1.2em;
-    color: #F5F5F5;
+.info-card div{
+    display: inline;
+    height: 100%;
 }
 
 .info-card h1{
     margin: 2%;
-    font-size: 1.8em;
+    font-size: 1.6em;
+}
+
+.info-card a{
+    color: #F5F5F5;
+    font-size: 1.2em;
 }
 
 .responsive-image {
@@ -180,15 +187,22 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .info-card.tall-image{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     margin: 0%;
     gap: 1vw;
     height: fit-content;
     vertical-align: middle;
 }
 
+.info-card.tall-image img{
+    width: 10vw;
+}
+
+
 .info-card.wide-image{
-    display: inline-block;
     margin: 0%;
+}
+
+.info-card.wide-image{
+    width: 20vw;
 }

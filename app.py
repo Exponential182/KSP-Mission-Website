@@ -38,7 +38,14 @@ def engines():
 
 @app.route("/stages")
 def stages():
-    return render_template("stages.html", title="KSP Mission Library")
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute("SELECT name, length, top_diameter, bottom_diameter, image_reference, id FROM Stage ORDER BY name ASC")
+    results = cursor.fetchall()
+    print(results)
+    results = [(a[0], a[1], round((a[2] + a[3])/2, 2), a[4], a[5]) for a in results]
+    print(results)
+    return render_template("stages.html", title="KSP Mission Library", data=results)
 
 
 @app.route("/license")

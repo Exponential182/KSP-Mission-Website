@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const applyAspectClass = () => {
             const aspectRatio = img.naturalWidth / img.naturalHeight;
-            container.classList.add(aspectRatio > 0.5 ? "wide-image" : "tall-image");
+            container.classList.add(aspectRatio > 0.7 ? "wide-image" : "tall-image");
         };
 
         if (img.complete) {
