@@ -16,9 +16,12 @@ def home():
 def missions():
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute("SELECT name, launch_vehicle, mission_goal, payload_image_reference, id FROM Mission ORDER BY name ASC")
+    cursor.execute("""SELECT name, launch_vehicle, mission_goal, 
+                   payload_image_reference, id FROM Mission 
+                   ORDER BY name ASC""")
     results = cursor.fetchall()
-    return render_template("missions.html", title="KSP Mission Library", data=results)
+    return render_template("missions.html", title="KSP Mission Library",
+                            data=results)
 
 
 # @app.route("/mission/<id:int>")
@@ -33,19 +36,29 @@ def missions():
 
 @app.route("/engines")
 def engines():
-    return render_template("engines.html", title="KSP Mission Library")
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    cursor.execute("""SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,
+                   ignition_count, image_reference, id FROM Engine
+                   ORDER BY name ASC""")
+    results = cursor.fetchall()
+    print(results)
+    return render_template("engines.html", title="KSP Mission Library",
+                            data=results)
 
 
 @app.route("/stages")
 def stages():
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
-    cursor.execute("SELECT name, length, top_diameter, bottom_diameter, image_reference, id FROM Stage ORDER BY name ASC")
+    cursor.execute("""SELECT name, length, top_diameter, bottom_diameter, 
+                   image_reference, id FROM Stage ORDER BY name ASC""")
     results = cursor.fetchall()
     print(results)
     results = [(a[0], a[1], round((a[2] + a[3])/2, 2), a[4], a[5]) for a in results]
     print(results)
-    return render_template("stages.html", title="KSP Mission Library", data=results)
+    return render_template("stages.html", title="KSP Mission Library",
+                           data=results)
 
 
 @app.route("/license")

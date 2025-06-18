@@ -1,1 +1,29 @@
 {% extends "layout.html" %}
+{%block content%}
+
+<section class="all-data-type">
+    <h1 class="all-data-type-header">All Engines</h1>
+    <div class="all-data-flex">
+        {%for i in data%}
+            <div class="info-card info-card-two-column">
+                <img src="{{i[6]}}" class="responsive-image" alt="Engine Image">
+                <div>
+                    <h1>Name: <br> {{i[0]}}</h1>
+                    <br>
+                    <h3>Fuel Type: <br> {{i[1]}}</h3>
+                    <br>
+                    <h3>Fuel Ratio: <br> {{i[2]}}</h3>
+                    <br>
+                    <h3>Thrust (Sea Level): <br> {{i[3]}} kN</h3>
+                    <br>
+                    <h3>ISP (Vacumn): <br> {{i[4]}} seconds</h3>
+                    <br>
+                    <h3>Ignitions: <br> {{i[5]}}</h3>
+                    <br>
+                    <a href="/stage/{{i[7]}}">More Details</a>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+</section>
+{%endblock%}
