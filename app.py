@@ -14,6 +14,9 @@ def home():
 
 @app.route("/missions")
 def missions():
+    """ A Function to render the dynamic page containing all of the missions 
+    stored in the database.
+    """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("""SELECT name, launch_vehicle, mission_goal, 
@@ -28,14 +31,14 @@ def missions():
 # def mission():
 #     conn = sqlite3.connect(database)
 #     cursor = conn.cursor()
-    
-
-    
 #     return render_template("mission.html", data = results)
 
 
 @app.route("/engines")
 def engines():
+    """ A Function to render the dynamic page containing all of the enignes 
+    stored in the database.
+    """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("""SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,
@@ -49,6 +52,9 @@ def engines():
 
 @app.route("/stages")
 def stages():
+    """ A Function to render the dynamic page containing all of the stages 
+    stored in the database.
+    """
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
     cursor.execute("""SELECT name, length, top_diameter, bottom_diameter, 
