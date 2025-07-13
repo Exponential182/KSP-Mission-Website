@@ -165,8 +165,6 @@ def mission_table_composer(database_link, csv_link):
                 linking_info = linking_info.replace("[","").replace("]","")
                 linking_ids = list(map(int, linking_info.split(",")))
 
-                print([(type(x), x) for x in values_to_insert])
-
                 cursor.execute(f"INSERT INTO Mission {columns_to_insert} VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", values_to_insert)
                 for i in linking_ids:
                     cursor.execute(f"INSERT INTO MissionStage (mission_id, stage_id) VALUES(?,?)", (values[0], i))
