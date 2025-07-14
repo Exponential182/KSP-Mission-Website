@@ -1,0 +1,20 @@
+{%extends "layout.html"%}
+{%block content%}
+<section class="mission_info">
+    <h2>{{data[1]}}</h2>
+    <div class="unbal-three-column-grid">
+        <div class="info-card">
+            <ul>
+                <li>Mission Goal: {{data[2]}}</li>
+                <li>Crew Count: {{data[3]}}</li>
+                <li>Mission Duration: {{data[4]}}</li>
+                <li>Power Source: {{data[5]}}</li>
+            </ul>
+        </div>
+    </div>
+
+</section>
+<h1>h1</h1>
+{{data}}
+<img src="/{{data[8]}}" alt="{{data[1]}}">
+{%endblock%}

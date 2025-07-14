@@ -27,11 +27,18 @@ def missions():
                             data=results)
 
 
-# @app.route("/mission/<id:int>")
-# def mission():
-#     conn = sqlite3.connect(database)
-#     cursor = conn.cursor()
-#     return render_template("mission.html", data = results)
+@app.route("/mission/<int:id>")
+def mission(id):
+    conn = sqlite3.connect(database)
+    cursor = conn.cursor()
+    query = f"SELECT * FROM Mission WHERE id = {id}"
+    cursor.execute(query)
+    results = cursor.fetchone()
+    results = list(results)
+    debug_res = [(index, val) for index, val in enumerate(results)]
+    print(debug_res)
+
+    return render_template("mission.html", title = "KSP Mission Library", data = results)
 
 
 @app.route("/engines")
