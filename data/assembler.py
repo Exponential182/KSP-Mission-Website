@@ -53,6 +53,17 @@ def convert_numerics_to_int_float(input_list):
     return input_list
     
 
+def empty_string_to_null(input_list):
+    """A function to replace empty string from csv files into None Characters
+    """
+
+    for index, val in enumerate(input_list):
+        if val == "":
+            input_list[index] = None
+    
+    return tuple(input_list)
+
+
 def engine_table_composer(database_link, csv_link):
     """A function to insert data on various engines into
     the engine table of database.
@@ -68,6 +79,7 @@ def engine_table_composer(database_link, csv_link):
                 values = list(dict(row).values())
                 columns_to_insert =  str(columns).replace("'", "")
                 values_to_insert = convert_numerics_to_int_float(values)
+                values_to_insert = empty_string_to_null(list(values_to_insert))
 
                 cursor = conn.cursor()
                 cursor.execute(f"INSERT INTO Engine {columns_to_insert}VALUES (?,?,?,?,?,?,?,?,?,?,?);", values_to_insert)
@@ -92,6 +104,7 @@ def image_table_composer(database_link, csv_link):
                 linking_info = values[-1]
                 values.remove(values[-1])
                 values_to_insert = convert_numerics_to_int_float(values)
+                values_to_insert = empty_string_to_null(list(values_to_insert))
                 linking_info = linking_info.replace("[","").replace("]","")
                 linking_ids = list(map(int, linking_info.split(",")))
 
@@ -120,6 +133,7 @@ def stage_table_composer(database_link, csv_link):
                 linking_info = values[-1]
                 values.remove(values[-1])
                 values_to_insert = convert_numerics_to_int_float(values)
+                values_to_insert = empty_string_to_null(list(values_to_insert))
                 linking_info = linking_info.replace("[","").replace("]","")
                 linking_ids = list(map(int, linking_info.split(",")))
 
@@ -147,6 +161,7 @@ def mission_table_composer(database_link, csv_link):
                 linking_info = values[-1]
                 values.remove(values[-1])
                 values_to_insert = convert_numerics_to_int_float(values)
+                values_to_insert = empty_string_to_null(list(values_to_insert))
                 linking_info = linking_info.replace("[","").replace("]","")
                 linking_ids = list(map(int, linking_info.split(",")))
 
