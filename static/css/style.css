@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6{
     background-color: #2E573A;
     color: #F5F5F5;
     place-items: center;
-    font-size: 0.6em;
+    font-size: 1.2vw;
 }
 
 .footer a{
@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .two-column-column p{
-    font-size: 1.1rem;
+    font-size: 1.5vw;
 }
 
 /* Page Headings */
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6{
 .all-data-type-header{
     margin: 0%;
     padding: 2%;
-    font-size: 2em;
+    font-size: 4vw;
     color: #F5F5F5;
     text-align: center;
     -webkit-text-stroke: 0.04em #3357C1;
@@ -158,7 +158,7 @@ h1, h2, h3, h4, h5, h6{
 .info-card{
     border: 0.3vw solid #0D0D0D;
     border-radius: 3%;
-    font-size: 0.6em;
+    font-size: 1.2vw;
     padding: 2.5%;
     background-color: #2E573A;
     color: #F5F5F5;
@@ -174,12 +174,12 @@ h1, h2, h3, h4, h5, h6{
 
 .info-card h1{
     margin: 2%;
-    font-size: 1.6em;
+    font-size: 2vw;
 }
 
 .info-card a{
     color: #F5F5F5;
-    font-size: 1.2em;
+    font-size: 1.4vw;
 }
 
 .info-card-two-column{
@@ -187,7 +187,7 @@ h1, h2, h3, h4, h5, h6{
     grid-template-columns: 1fr 1fr;
     border: 0.3vw solid #0D0D0D;
     border-radius: 3%;
-    font-size: 0.6em;
+    font-size: 1.2vw;
     padding: 2.5%;
     background-color: #2E573A;
     color: #F5F5F5;
@@ -224,8 +224,23 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /* Mission Specific Page (Maybe all Specific Pages) */
+.mission-info{
+    background-color: #F5F5F5;
+}
+
 .unbal-three-column-grid{
     margin: 2vw;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+}
+
+.info-list{
+    border: #0D0D0D solid  0.3vw;
+    border-radius: 3%;
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+.info-list p{
+    margin: 2vh;
 }
