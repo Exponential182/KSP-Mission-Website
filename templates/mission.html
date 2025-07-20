@@ -1,7 +1,7 @@
 {%extends "layout.html"%}
 {%block content%}
+<h2 class="mission-header">{{data[1]}}</h2>
 <section class="mission-info">
-    <h2>{{data[1]}}</h2>
     <div class="unbal-three-column-grid">
         <div class="info-list">
                 <p>Mission Goal: {{data[2]}}</p>
@@ -9,9 +9,16 @@
                 <p>Mission Duration: {{data[4]}}</p>
                 <p>Power Source: {{data[5]}}</p>
                 <p>Axial Control System: {{data[6]}}</p>
+                <p>Launch Vehicle: {{data[9]}}</p>
+                <p>Destination: {{data[10]}}</p>
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <img src="/{{data[8]}}" alt="The {{data[1]}} Mission Payload" class="mission-payload">
         </div>
     </div>
-
 </section>
 <h1>h1</h1>
 {{data}}
