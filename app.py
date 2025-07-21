@@ -76,7 +76,7 @@ def mission(mission_id: int):
         results = list(results[0])
     else:
         return render_template("404.html", message= "The id does not exist in the database.", url = request.url)
-    ####### DEBUG - REMOVE WHEN DEVELOPED
+    # DEBUG - REMOVE WHEN DEVELOPED
     debug_res = [(index, val) for index, val in enumerate(results)]
     print(debug_res)
 
