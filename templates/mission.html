@@ -3,20 +3,25 @@
 <h2 class="mission-header">{{data[1]}}</h2>
 <section class="mission-info">
     <div class="unbal-three-column-grid">
-        <div class="info-list">
-                <p>Mission Goal: {{data[2]}}</p>
-                <p>Crew Count: {{data[3]}}</p>
-                <p>Mission Duration: {{data[4]}}</p>
-                <p>Power Source: {{data[5]}}</p>
-                <p>Axial Control System: {{data[6]}}</p>
-                <p>Launch Vehicle: {{data[9]}}</p>
-                <p>Destination: {{data[10]}}</p>
+        <div>
+            <div class="info-list">
+                {% for i in data %}
+                    {% if i[0] == {{binary_true}} and i[1] != None %}
+                        <p>{{i[0]}}: {{i[1]}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div>
-
+            <div class="summary-text">
+                <h2>Mission Report:</h2>
+                <p>{{data[7]}}</p>
+            </div>
         </div>
         <div>
-            <img src="/{{data[8]}}" alt="The {{data[1]}} Mission Payload" class="mission-payload">
+            <div class="mission-payload">
+                <img src="/{{data[8]}}" alt="The {{data[1]}} Mission Payload" class="mission-payload-image">
+            </div>
         </div>
     </div>
 </section>

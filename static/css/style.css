@@ -225,7 +225,7 @@ h1, h2, h3, h4, h5, h6{
 
 /* Mission Specific Page (Maybe all Specific Pages) */
 .mission-info{
-    background: linear-gradient(#3357C1, #66B4FF, #3357C1, #162654);
+    background: linear-gradient(#3357C1, #66B4FF, #3357C1);
     padding-top: 6vh;
     padding-bottom: 6vh;
 }
@@ -240,13 +240,18 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .mission-payload{
-    border: #5E7F68 0.3vw solid;
+    text-align: center;
+}
+
+.mission-payload-image{
+    border: #2E573A 0.5vw solid;
 }
 
 .unbal-three-column-grid{
     margin: 2vw;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
+    gap: 3vw;
 }
 
 .info-list{
@@ -258,4 +263,8 @@ h1, h2, h3, h4, h5, h6{
 
 .info-list p{
     margin: 2vh;
+}
+
+.summary-text{
+    font-size: 0.85em;
 }

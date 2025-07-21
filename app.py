@@ -14,6 +14,36 @@ def lookup_query(query: str):
     return results
 
 
+def mission_data_formatter(data_row: list):
+    """ A Function to adjust the formatting of the data from the mission query 
+    to a useful format.
+    """
+    columns = [
+        False, False, "Mission Goal", "Crew Count",
+        "Estimated Mission Duration", "Power Source", "Axial Control System",
+        False, False, "Launch Vehicle", "Destination", "Semi Major Axis (km)", 
+        "Periapsis (km)", "Apoapsis (km)", "Orbital Period", "Eccentricity", 
+        "Inclination (deg)", "Longitude of the Ascending Node (deg)",
+        "Argument of Periapsis (deg)", "Latitude of Landing",
+        "Longitude of Landing"
+    ]
+    m_to_km = 0.001
+    multiplicative_transforms = {
+        11: m_to_km, 12: m_to_km, 13: m_to_km, 14: seconds_to_time,
+    }
+    for key, value in multiplicative_transforms.items():
+        if callable(value) is True:
+            data_row[key] = value(data_row[key])
+        elif type(value) == float:
+            data_row[key] = round(data_row[key] * value, 3)
+    formatted_datarow = list(zip(columns, data_row))
+    return formatted_datarow
+
+
+def seconds_to_time(seconds: int):
+    return seconds
+
+
 @app.route("/")
 def home():
     """ A Function to render the static home page to the site. """
@@ -29,11 +59,17 @@ def missions():
             payload_image_reference, id FROM Mission ORDER BY name ASC"""
     results = lookup_query(query)
     return render_template("missions.html", title="KSP Mission Library",
-                            data=results)
+                           data=results, binary_true=True)
 
 
 @app.route("/mission/<int:mission_id>")
 def mission(mission_id: int):
+    orbital_parameter_and_landing_columns = [
+        "Semi Major Axis (km)", 
+        "Periapsis (km)", "Apoapsis (km)", "Orbital Period", "Eccentricity", 
+        "Inclination", "Longitude of the Ascending Node",
+        "Argument of Periapsis", "Latitude of Landing", "Longitude of Landing"
+    ]
     query = f"SELECT * FROM Mission WHERE id = {mission_id}"
     results = lookup_query(query)
     if len(results) > 0:
@@ -43,6 +79,9 @@ def mission(mission_id: int):
     ####### DEBUG - REMOVE WHEN DEVELOPED
     debug_res = [(index, val) for index, val in enumerate(results)]
     print(debug_res)
+
+    results = mission_data_formatter(results)
+    print(results)
 
     return render_template("mission.html", title = "KSP Mission Library", data = results)
 
@@ -65,8 +104,6 @@ def stages():
     """ A Function to render the dynamic page containing all of the stages 
     stored in the database.
     """
-    conn = sqlite3.connect(database)
-    cursor = conn.cursor()
     query = """SELECT name, length, top_diameter, bottom_diameter, 
             image_reference, id FROM Stage ORDER BY name ASC"""
     results = lookup_query(query)
