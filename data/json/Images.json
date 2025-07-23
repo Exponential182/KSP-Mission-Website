@@ -352,5 +352,137 @@
         "url": "static/images/inflight-images/svet-17/Svet-17-deployment.png",
         "caption": "The Svet 17 spacecraft is released, with its solar panels facing the sun and a gentle stabilising spin established.",
         "related_mission_ids": "[10]"
+    },
+    {
+        "id": "60",
+        "url": "static/images/inflight-images/luna-20/Luna-20-pad.png",
+        "caption": "The Luna 20 spacecraft, atop its UR-200A launch vehicle, awaits launch.",
+        "related_mission_ids": "[11]"
+    },
+    {
+        "id": "61",
+        "url": "static/images/inflight-images/luna-20/Luna-20-ascent1.png",
+        "caption": "The UR-200A first stage rises over the Pacific Ocean in the early morning.",
+        "related_mission_ids": "[11]"
+    },
+    {
+        "id": "62",
+        "url": "static/images/inflight-images/luna-20/Luna-20-ascent2.png",
+        "caption": "The UR-200A second stage continues to propel the Luna 20 stack into Earth orbit.",
+        "related_mission_ids": "[11]"
+    },
+    {
+        "id": "63",
+        "url": "static/images/inflight-images/luna-20/Luna-20-post-TLI.png",
+        "caption": "The Pegasus-B kick stage successfully completed a burn to place the spacecraft into a translunar trajectory over South America.",
+        "related_mission_ids": "[11]"
+    },
+    {
+        "id": "64",
+        "url": "static/images/inflight-images/luna-20/Luna-20-hulk.png",
+        "caption": "The vehicle during its transfer to the Moon, runs out of power leaving it a metallic hulk flying through space.",
+        "related_mission_ids": "[11]"
+    },
+    {
+        "id": "65",
+        "url": "static/images/inflight-images/explorer-4/Explorer-4-pad.png",
+        "caption": "The Explorer 4 spacecraft atop its UR-100A booster, awaiting its launch into a polar orbit.",
+        "related_mission_ids": "[12]"
+    },
+    {
+        "id": "66",
+        "url": "static/images/inflight-images/explorer-4/Explorer-4-ascent.png",
+        "caption": "The URS-100-1A first stage propels the spacecraft towards space, however, a wing element is experiencing unexpected heat loading.",
+        "related_mission_ids": "[12]"
+    },
+    {
+        "id": "67",
+        "url": "static/images/inflight-images/explorer-4/Explorer-4-failure.png",
+        "caption": "Due to an aerodynamic surface overheating, the vehicle spins out of control, causing the second and third stage engines to be unable to fire, dooming the mission.",
+        "related_mission_ids": "[12]"
+    },
+    {
+        "id": "68",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-flyby.png",
+        "caption": "The Pioneer 3 spacecraft approaches the rocky hulk of Mercury, which is the most thermally strenuous environment the spacecraft will have to endure.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "69",
+        "url": "static/images/inflight-images/pioneer-3/Pioneer-3-flyby2.png",
+        "caption": "Pioneer 3 at its closest approach to Mercury, here it collected lots of useful information on the closest planet to the Sun.",
+        "related_mission_ids": "[7]"
+    },
+    {
+        "id": "70",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-pad.png",
+        "caption": "The Explorer 5 spacecraft, atop its UR-100A launch vehicle awaiting launch, hoping for a more successful launch than its predecessors.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "71",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-ascent1.png",
+        "caption": "The URS-100-1A rises above the space centre, suffering no immediate adverse aerodynamic anomalies like the last mission.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "72",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-ascent-2.png",
+        "caption": "The second stage of the UR-100A propels the spacecraft into orbit, a minor anomaly occurs, resulting in a loss of thrust from the second stage, but this is a minor problem.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "73",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-ascent3.png",
+        "caption": "The Pegasus-B kick stage completes the orbital insertion burn.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "74",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-transfer.png",
+        "caption": "The Explorer 5 spacecraft is propelled into its target orbit by the Pegasus-B kick stage.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "75",
+        "url": "static/images/inflight-images/explorer-5/Explorer-5-deploy.png",
+        "caption": "The Explorer 5 spacecraft is deployed into its highly eccentric orbit, which allows it to gather data on many parts of the planet and its space environment.",
+        "related_mission_ids": "[14]"
+    },
+    {
+        "id": "76",
+        "url": "static/images/inflight-images/luna-21/Luna-21-pad.png",
+        "caption": "The Luna 21 spacecraft and its Pegasus-B atop its especially stylised UR-200A awaiting launch.",
+        "related_mission_ids": "[13]"
+    },
+    {
+        "id": "77",
+        "url": "static/images/inflight-images/luna-21/Luna-21-ascent1.png",
+        "caption": "The UR-200A launch vehicle rising into the sky, turning east of the Pacific Ocean.",
+        "related_mission_ids": "[13]"
+    },
+    {
+        "id": "78",
+        "url": "static/images/inflight-images/luna-21/Luna-21-ascent2.png",
+        "caption": "The second stage of the UR-200A ignites successfully, sending the first stage into the Pacific Ocean.",
+        "related_mission_ids": "[13]"
+    },
+    {
+        "id": "79",
+        "url": "static/images/inflight-images/luna-21/Luna-21-transfer.png",
+        "caption": "The Pegasus-B kick stage, specially modified for deep space missions, burns to place Luna 21 onto a translunar trajectory.",
+        "related_mission_ids": "[13]"
+    },
+    {
+        "id": "80",
+        "url": "static/images/inflight-images/luna-21/Luna-21-deepspace.png",
+        "caption": "The Luna 21 spacecraft in deep space during its three day journey to the Moon.",
+        "related_mission_ids": "[13]"
+    },
+    {
+        "id": "81",
+        "url": "static/images/inflight-images/luna-21/Luna-21-captured.png",
+        "caption": "The Luna 21 spacecraft, captured into lunar orbit and left to fly free of the transfer stage, begins its scientific mission.",
+        "related_mission_ids": "[13]"
     }
 ]
