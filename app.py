@@ -1,13 +1,15 @@
 from flask import Flask, render_template, request
 import sqlite3
+from os import path
 
 app = Flask(__name__)
-database = "ksp.db"
+runtime_directory = path.abspath(path.dirname(__file__))
+db_path = path.join(runtime_directory, "ksp.db")
 
 
 def lookup_query(query: str):
     """ A function to simplify the execution of pre-sanitised queries. """
-    conn = sqlite3.connect(database)
+    conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute(query)
     results = cursor.fetchall()
@@ -32,16 +34,28 @@ def mission_data_formatter(data_row: list):
         11: m_to_km, 12: m_to_km, 13: m_to_km, 14: seconds_to_time,
     }
     for key, value in multiplicative_transforms.items():
-        if callable(value) is True:
+        if callable(value) is True and data_row[key]:
             data_row[key] = value(data_row[key])
-        elif type(value) == float:
+        elif type(value) == float and type(data_row[key]) == (float or int):
             data_row[key] = round(data_row[key] * value, 3)
     formatted_datarow = list(zip(columns, data_row))
     return formatted_datarow
 
 
-def seconds_to_time(seconds: int):
-    return seconds
+def seconds_to_time(seconds: float):
+    time_in_seconds = {31536000: "y", 86400: "d", 3600: "h", 60: "m"}
+    output_time_string = ""
+    for mult, time_string in time_in_seconds.items():
+        print(seconds)
+        if seconds // mult == 0:
+            continue
+        else:
+            num_of_time_intervals = seconds // mult
+            seconds -= num_of_time_intervals * mult
+            output_time_string += f"{int(num_of_time_intervals)}{time_string} "
+    if seconds > 0:
+        output_time_string += f"{seconds:.2f}s"
+    return output_time_string
 
 
 @app.route("/")
@@ -76,14 +90,10 @@ def mission(mission_id: int):
         results = list(results[0])
     else:
         return render_template("404.html", message= "The id does not exist in the database.", url = request.url)
-    # DEBUG - REMOVE WHEN DEVELOPED
-    debug_res = [(index, val) for index, val in enumerate(results)]
-    print(debug_res)
-
+    
     results = mission_data_formatter(results)
-    print(results)
 
-    return render_template("mission.html", title = "KSP Mission Library", data = results)
+    return render_template("mission.html", title = "KSP Mission Library", mission_data = results)
 
 
 @app.route("/engines")

@@ -1,13 +1,13 @@
 {%extends "layout.html"%}
 {%block content%}
-<h2 class="mission-header">{{data[1]}}</h2>
+<h2 class="mission-header">{{mission_data[1][1]}}</h2>
 <section class="mission-info">
     <div class="unbal-three-column-grid">
         <div>
             <div class="info-list">
-                {% for i in data %}
-                    {% if i[0] == {{binary_true}} and i[1] != None %}
-                        <p>{{i[0]}}: {{i[1]}}</p>
+                {% for name, info in mission_data %}
+                    {% if name and info%}
+                        <p>{{name}}: {{info}}</p>
                     {% endif %}
                 {% endfor %}
             </div>
@@ -15,17 +15,15 @@
         <div>
             <div class="summary-text">
                 <h2>Mission Report:</h2>
-                <p>{{data[7]}}</p>
+                <p>{{mission_data[7][1]}}</p>
             </div>
         </div>
         <div>
             <div class="mission-payload">
-                <img src="/{{data[8]}}" alt="The {{data[1]}} Mission Payload" class="mission-payload-image">
+                <img src="/{{mission_data[8][1]}}" alt="The {{mission_data[1][1]}} Mission Payload" class="mission-payload-image">
             </div>
         </div>
     </div>
 </section>
-<h1>h1</h1>
-{{data}}
-<img src="/{{data[8]}}" alt="{{data[1]}}">
+{{mission_data}}
 {%endblock%}
