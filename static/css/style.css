@@ -250,8 +250,8 @@ h1, h2, h3, h4, h5, h6{
 .unbal-three-column-grid{
     margin: 2vw;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 3vw;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 4vw;
 }
 
 .info-list{
