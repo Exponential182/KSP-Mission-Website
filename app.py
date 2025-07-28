@@ -91,16 +91,27 @@ def mission(mission_id: int):
     """ A Function to gather and format the data on a mission then render the 
     HTML template to display the mission data to the end user.
     """
-    query = f"SELECT * FROM Mission WHERE id = {mission_id}"
-    results = lookup_query(query)
+    mission_query = f"SELECT * FROM Mission WHERE id = {mission_id}"
+    results = lookup_query(mission_query)
     if len(results) > 0:
         results = list(results[0])
     else:
-        return render_template("404.html", message= "The id does not exist in the database.", url = request.url)
-    
-    results = mission_data_formatter(results)
+        return render_template("404.html", 
+                               message="The id does not exist in the database.",
+                               url = request.url)
+    mission_info = mission_data_formatter(results)
 
-    return render_template("mission.html", title = "KSP Mission Library", mission_data = results)
+    stages_query = ("SELECT id, name, length, top_diameter, bottom_diameter, "
+                    "material, image_reference FROM Stage WHERE id in "
+                    "(SELECT stage_id FROM MissionStage "
+                    f"WHERE mission_id = {mission_id})")
+    stages_info = lookup_query(stages_query)
+    stages_info = [(a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5], a[6]) for a in stages_info]
+
+
+    return render_template("mission.html", title = "KSP Mission Library",
+                           mission_data = mission_info, 
+                           stages_data = stages_info)
 
 
 @app.route("/engines")
@@ -108,9 +119,8 @@ def engines():
     """ A Function to render the dynamic page containing all of the enignes 
     stored in the database.
     """
-    query = """SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,
-                   ignition_count, image_reference, id FROM Engine
-                   ORDER BY name ASC"""
+    query = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,"
+            "ignition_count, image_reference, id FROM EngineORDER BY name ASC")
     results = lookup_query(query)
     return render_template("engines.html", title="KSP Mission Library",
                             data=results)
@@ -121,11 +131,11 @@ def stages():
     """ A Function to render the dynamic page containing all of the stages 
     stored in the database.
     """
-    query = """SELECT name, length, top_diameter, bottom_diameter, 
-            image_reference, id FROM Stage ORDER BY name ASC"""
+    query = """SELECT id, name, length, top_diameter, bottom_diameter, 
+            image_reference FROM Stage ORDER BY name ASC"""
     results = lookup_query(query)
     # Format the data to avoid computational logic in Jinja/HTML template.
-    results = [(a[0], a[1], round((a[2] + a[3])/2, 2), a[4], a[5]) for a in results]
+    results = [(a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5]) for a in results]
     return render_template("stages.html", title="KSP Mission Library",
                            data=results)
 

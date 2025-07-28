@@ -7,16 +7,16 @@
         {%for i in data%}
             <div class="info-card">
                 <div>
-                    <img src="{{i[3]}}" class="responsive-image" alt="Stage Image">
+                    <img src="{{i[4]}}" class="responsive-image" alt="Stage Image">
                 </div>
                 <div>
-                    <h1>Name: <br> {{i[0]}}</h1>
+                    <h1>Name: <br> {{i[1]}}</h1>
                     <br>
-                    <h3>Length (metres): <br> {{i[1]}}</h3>
+                    <h3>Length (metres): <br> {{i[2]}}</h3>
                     <br>
-                    <h3>Average Diameter (metres): <br> {{i[2]}}</h3>
+                    <h3>Average Diameter (metres): <br> {{i[3]}}</h3>
                     <br>
-                    <a href="/stage/{{i[4]}}">More Details</a>
+                    <a href="/stage/{{i[0]}}">More Details</a>
                 </div>
             </div>
         {%endfor%}
