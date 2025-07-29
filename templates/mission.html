@@ -26,12 +26,26 @@
         </div>
     </div>
     <div class="unbal-two-column-grid">
-        <div>
-            {{% for i in stages_data %}}
+        <div class="mission-stage-summary">
+            {% for i in stages_data %}
+                <div class="info-card">
+                    <div>
+                        <img src="/{{i[5]}}" alt="{{i[1]}} Stage" class="responsive-image">
+                    </div>
+                    <div class="mission-stage-summary-text">
+                        <p>Name: {{i[1]}}</p>
+                        <p>Length: {{i[2]}}</p>
+                        <p>Average Diameter: {{i[3]}}</p>
+                        <p>Material: {{i[4]}}</p>
+                        <p><a href="/stage/{{i[0]}}">More Details</a></p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
         <div>
 
         </div>
     </div>
 </section>
+<script src="../static/scripts/aspect_ratio_hander.js"></script>
 {%endblock%}

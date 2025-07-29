@@ -254,6 +254,14 @@ h1, h2, h3, h4, h5, h6{
     gap: 4vw;
 }
 
+.unbal-two-column-grid{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4vw;
+    row-gap: 4vh;
+    margin: 2vw;
+}
+
 .info-list{
     border: #0D0D0D solid  0.3vw;
     border-radius: 3%;
@@ -267,4 +275,17 @@ h1, h2, h3, h4, h5, h6{
 
 .summary-text{
     font-size: 0.85em;
+}
+
+.mission-stage-summary{
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 4vh;
+}
+
+.mission-stage-summary-text{
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    display: flex;
 }
