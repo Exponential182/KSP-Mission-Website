@@ -108,10 +108,17 @@ def mission(mission_id: int):
     stages_info = lookup_query(stages_query)
     stages_info = [(a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5], a[6]) for a in stages_info]
 
+    images_query = ("SELECT caption, url, id FROM Image WHERE id in (SELECT "
+                    "image_id FROM MissionImage WHERE mission_id = "
+                    f"{mission_id})") # REPLACE ID WITH ENUMERATE FOR JS FORMATING
+    images_info = lookup_query(images_query)
+    print(images_info)
+
 
     return render_template("mission.html", title = "KSP Mission Library",
                            mission_data = mission_info, 
-                           stages_data = stages_info)
+                           stages_data = stages_info,
+                           image_gallery_data = images_info)
 
 
 @app.route("/engines")

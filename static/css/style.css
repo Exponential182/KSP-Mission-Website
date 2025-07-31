@@ -258,7 +258,6 @@ h1, h2, h3, h4, h5, h6{
     display: grid;
     grid-template-columns: 2fr 3fr;
     gap: 4vw;
-    row-gap: 4vh;
     margin: 2vw;
 }
 
@@ -280,7 +279,6 @@ h1, h2, h3, h4, h5, h6{
 .mission-stage-summary{
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 4vh;
 }
 
 .mission-stage-summary-text{
@@ -288,4 +286,48 @@ h1, h2, h3, h4, h5, h6{
     font-size: 1.4em;
     font-weight: 600;
     display: flex;
+}
+
+.full-size-image-section{
+    line-height: 0%;
+}
+
+.image-slide{
+    border: #F5F5F5 0.2vw solid;
+}
+
+.image-slide-size-reg{
+    width: 55vw;
+    max-width: 55vw;
+}
+
+.image-gallery{
+    width: 55.4vw;
+}
+
+.image-caption{
+    color: #F5F5F5;
+    width: 100%;
+    margin: 0%;
+    padding: 0.5vw 0vw;
+    font-size: 0.7em;
+    text-align: center;
+    font-weight: 600;
+    background-color: #365F42;
+    line-height: normal;
+}
+
+.thumbnail-image-section{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1vw;
+    row-gap: 0vw;
+}
+
+.image-preview-slide, .image-preview{
+    width: 8.36vw;
+}
+
+.show-pointer{
+    cursor: pointer;
 }

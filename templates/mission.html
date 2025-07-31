@@ -27,25 +27,42 @@
     </div>
     <div class="unbal-two-column-grid">
         <div class="mission-stage-summary">
-            {% for i in stages_data %}
+            {% for stage in stages_data %}
                 <div class="info-card">
                     <div>
-                        <img src="/{{i[5]}}" alt="{{i[1]}} Stage" class="responsive-image">
+                        <img src="/{{stage[5]}}" alt="{{stage[1]}} Stage" class="responsive-image">
                     </div>
                     <div class="mission-stage-summary-text">
-                        <p>Name: {{i[1]}}</p>
-                        <p>Length: {{i[2]}}</p>
-                        <p>Average Diameter: {{i[3]}}</p>
-                        <p>Material: {{i[4]}}</p>
-                        <p><a href="/stage/{{i[0]}}">More Details</a></p>
+                        <p>Name: {{stage[1]}}</p>
+                        <p>Length: {{stage[2]}}</p>
+                        <p>Average Diameter: {{stage[3]}}</p>
+                        <p>Material: {{stage[4]}}</p>
+                        <p><a href="/stage/{{stage[0]}}">More Details</a></p>
                     </div>
                 </div>
             {% endfor %}
         </div>
-        <div>
-
+        <div class="image-gallery">
+            <div class="full-size-image-section">
+                {% for image in image_gallery_data %}
+                    <div class="image-slide">
+                        <img src="/{{image[1]}}" alt="This image failed to load" class="image-slide-size-reg">
+                        <p class="image-caption">{{image[0]}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <a href="" class="previous-image"></a>
+            <a onclick="" class="next-image"></a>
+            <div class="thumbnail-image-section">
+                {% for image in image_gallery_data %}
+                    <div class="image-preview-slide">
+                        <img src="/{{image[1]}}" alt="This image failed to load" class="image-preview show-pointer" onclick="go_to_slide('{{image[2]}}')">
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </section>
 <script src="../static/scripts/aspect_ratio_hander.js"></script>
+<script src="../static/scripts/image_slideshow.js"></script>
 {%endblock%}
