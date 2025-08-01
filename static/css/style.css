@@ -284,6 +284,7 @@ h1, h2, h3, h4, h5, h6, p{
 .mission-stage-summary{
     display: grid;
     grid-template-columns: 1fr;
+    row-gap: 2vw;
 }
 
 .mission-stage-summary-text{
@@ -291,6 +292,7 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 1.4em;
     font-weight: 600;
     display: flex;
+    line-height: 1.7em;
 }
 
 .full-size-image-section{
@@ -332,6 +334,15 @@ h1, h2, h3, h4, h5, h6, p{
 .image-preview-slide, .image-preview{
     width: 8.36vw;
 }
+
+.image-preview{
+    opacity: 0.8;
+}
+
+.active, 
+.image-preview:hover{
+    opacity: 1;
+} 
 
 .show-pointer{
     cursor: pointer;

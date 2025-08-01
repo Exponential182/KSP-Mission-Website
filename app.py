@@ -106,12 +106,17 @@ def mission(mission_id: int):
                     "(SELECT stage_id FROM MissionStage "
                     f"WHERE mission_id = {mission_id})")
     stages_info = lookup_query(stages_query)
-    stages_info = [(a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5], a[6]) for a in stages_info]
+    stages_info = [
+        (a[0], a[1], a[2], round((a[3] + a[4])/2, 2),a[5], a[6]) for a in stages_info
+    ]
 
     images_query = ("SELECT caption, url, id FROM Image WHERE id in (SELECT "
                     "image_id FROM MissionImage WHERE mission_id = "
                     f"{mission_id})") # REPLACE ID WITH ENUMERATE FOR JS FORMATING
     images_info = lookup_query(images_query)
+    images_info = [
+        (image[0], image[1], index+1) for index, image in enumerate(images_info)
+    ]
     print(images_info)
 
 
