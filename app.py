@@ -147,7 +147,9 @@ def stages():
             image_reference FROM Stage ORDER BY name ASC"""
     results = lookup_query(query)
     # Format the data to avoid computational logic in Jinja/HTML template.
-    results = [(a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5]) for a in results]
+    results = [
+        (a[0], a[1], a[2], round((a[3] + a[4])/2, 2), a[5]) for a in results
+    ]
     return render_template("stages.html", title="KSP Mission Library",
                            data=results)
 
