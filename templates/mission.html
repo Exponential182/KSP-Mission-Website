@@ -47,16 +47,11 @@
                 {% for image in image_gallery_data %}
                     <div class="image-slide">
                         <img src="/{{image[1]}}" alt="This image failed to load" class="image-slide-size-reg">
-                        <p class="image-caption">{{image[0]}}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <a href="" class="previous-image"></a>
-            <a onclick="" class="next-image"></a>
-            <div class="thumbnail-image-section">
-                {% for image in image_gallery_data %}
-                    <div class="image-preview-slide">
-                        <img src="/{{image[1]}}" alt="This image failed to load" class="image-preview show-pointer" onclick="go_to_slide('{{image[2]}}')">
+                        <div class="image-gallery-caption">
+                            <a onclick="slide_shift(-1)" class="previous">&#10094;</a>
+                            <p class="image-caption">{{image[0]}}</p>
+                            <a onclick="slide_shift(1)" class="next">&#10095;</a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>

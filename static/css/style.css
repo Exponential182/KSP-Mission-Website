@@ -320,30 +320,19 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 0.7em;
     text-align: center;
     font-weight: 600;
-    background-color: #365F42;
     line-height: normal;
 }
 
-.thumbnail-image-section{
+.image-gallery-caption{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1vw;
-    row-gap: 0vw;
+    place-items: center;
+    grid-template-columns: 1fr 8fr 1fr;
+    background-color: #365F42;
 }
 
-.image-preview-slide, .image-preview{
-    width: 8.36vw;
-}
-
-.image-preview{
-    opacity: 0.8;
-}
-
-.active, 
-.image-preview:hover{
-    opacity: 1;
-} 
-
-.show-pointer{
+.previous, .next{
     cursor: pointer;
+    color: #F5F5F5;
+    vertical-align: middle;
+    text-align: center;
 }

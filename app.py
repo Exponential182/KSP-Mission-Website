@@ -117,8 +117,6 @@ def mission(mission_id: int):
     images_info = [
         (image[0], image[1], index+1) for index, image in enumerate(images_info)
     ]
-    print(images_info)
-
 
     return render_template("mission.html", title = "KSP Mission Library",
                            mission_data = mission_info, 
