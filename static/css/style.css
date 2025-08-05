@@ -75,17 +75,19 @@ h1, h2, h3, h4, h5, h6, p{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60vh
+    width: 100%;
+    height: 40vw;
 }
 
 .hero-text{
     vertical-align: middle;
     text-align: center;
     color: #F5F5F5;
-    font-size: 3vw;
+    font-size: 1.4em;
     position: relative;
-    top: 10vh;
+    top: 8vw;
     font-weight: 800;
+    place-items: middle;
 }
 
 .hero-text h1{
@@ -113,7 +115,11 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .two-column-column p{
-    font-size: 1.5vw;
+    font-size: 0.65em;
+}
+
+.two-column-column h2{
+    font-size: 1.3em;
 }
 
 /* Page Headings */
@@ -129,17 +135,16 @@ h1, h2, h3, h4, h5, h6, p{
 
 /* All Data Sections. For all mission, stage, and engine pages. */
 .all-data-type{
-    background-color: #F5F5F5;
+    background: linear-gradient(135deg, #3357C1, #66B4FF, #3357C1);
 }
 
 .all-data-type-header{
     margin: 0%;
     padding: 2%;
-    font-size: 4vw;
+    font-size: 2.5em;
     color: #F5F5F5;
     text-align: center;
-    -webkit-text-stroke: 0.2vw #3357C1;
-    background-color: #365F42;
+    -webkit-text-stroke: 0.25vw #162654;
 }
 
 .all-data-flex{
@@ -150,7 +155,6 @@ h1, h2, h3, h4, h5, h6, p{
     padding: 4vh 5vw;
     vertical-align: middle;
     align-items: center;
-    background: linear-gradient(135deg, #365F42, #5e7f68, #365F42);
 }
 
 
