@@ -27,33 +27,49 @@
     </div>
     <div class="unbal-two-column-grid">
         <div class="mission-stage-summary">
-            {% for stage in stages_data %}
+            {% if stages_data|length == 0 %}
                 <div class="info-card">
-                    <div>
-                        <img src="/{{stage[5]}}" alt="{{stage[1]}} Stage" class="responsive-image">
-                    </div>
-                    <div class="mission-stage-summary-text">
-                        <p>Name: {{stage[1]}}</p>
-                        <p>Length: {{stage[2]}}</p>
-                        <p>Average Diameter: {{stage[3]}}</p>
-                        <p>Material: {{stage[4]}}</p>
-                        <p><a href="/stage/{{stage[0]}}">More Details</a></p>
-                    </div>
+                    <h2>
+                        There are no stages related to this mission in the library.
+                    </h2>
                 </div>
-            {% endfor %}
-        </div>
-        <div class="image-gallery">
-            <div class="full-size-image-section">
-                {% for image in image_gallery_data %}
-                    <div class="image-slide">
-                        <img src="/{{image[1]}}" alt="This image failed to load" class="image-slide-size-reg">
-                        <div class="image-gallery-caption">
-                            <a onclick="slide_shift(-1)" class="previous">&#10094;</a>
-                            <p class="image-caption">{{image[0]}}</p>
-                            <a onclick="slide_shift(1)" class="next">&#10095;</a>
+            {% else %}
+                {% for stage in stages_data %}
+                    <div class="info-card">
+                        <div>
+                            <img src="/{{stage[5]}}" alt="{{stage[1]}} Stage" class="responsive-image">
+                        </div>
+                        <div class="mission-stage-summary-text">
+                            <p>Name: {{stage[1]}}</p>
+                            <p>Length: {{stage[2]}}</p>
+                            <p>Average Diameter: {{stage[3]}}</p>
+                            <p>Material: {{stage[4]}}</p>
+                            <p><a href="/stage/{{stage[0]}}">More Details</a></p>
                         </div>
                     </div>
                 {% endfor %}
+            {% endif %}
+        </div>
+        <div class="image-gallery">
+            <div class="full-size-image-section">
+                {% if image_gallery_data|length == 0 %}
+                    <div class="info-card">
+                        <h2 style="line-height: normal;">
+                            There are no images related to the mission in the library.
+                        </h2>
+                    </div>    
+                {% else %}
+                    {% for image in image_gallery_data %}
+                        <div class="image-slide">
+                            <img src="/{{image[1]}}" alt="This image failed to load" class="image-slide-size-reg">
+                            <div class="image-gallery-caption">
+                                <a onclick="slide_shift(-1)" class="previous">&#10094;</a>
+                                <p class="image-caption">{{image[0]}}</p>
+                                <a onclick="slide_shift(1)" class="next">&#10095;</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </div>
