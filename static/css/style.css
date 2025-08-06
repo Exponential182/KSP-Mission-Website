@@ -101,6 +101,35 @@ h1, h2, h3, h4, h5, h6, p{
     margin: 0%;
 }
 
+.home-page-redirect-card{
+    border: 0.15rem solid #0D0D0D;
+    border-radius: 3%;
+    background-color: #2E573A;
+    padding: 0.4rem;
+    color: #F5F5F5;
+    height: fit-content;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0.6rem 0.4rem 0.4rem #162654;
+}
+
+.home-page-redirect-card a{
+    color: #F5F5F5;
+}
+
+.home-page-redirect-card img{
+    width: 100%;
+}
+
+
+/* 3 Column Grid */
+.three-column-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: linear-gradient(#162654, #3357C1, #66B4FF);
+    padding: 1rem 0.8rem;
+    gap: 2rem;
+}
 
 /* 2 Column Grid */
 .two-column-grid{
