@@ -141,7 +141,7 @@ def engines():
     stored in the database.
     """
     query = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,"
-            "ignition_count, image_reference, id FROM EngineORDER BY name ASC")
+            "ignition_count, image_reference, id FROM Engine ORDER BY name ASC")
     results = lookup_query(query)
     return render_template("engines.html", title="KSP Mission Library",
                             data=results)
