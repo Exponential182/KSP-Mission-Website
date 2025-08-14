@@ -1,3 +1,5 @@
+/* Mostly based on an image slideshow tutorial from W3schools. */
+
 let slide_index = 0;
 go_to_slide(slide_index);
 
