@@ -183,8 +183,8 @@ def glossary():
 
 @app.route("/sitemap")
 def sitemap():
-    """ A function to render the sitemap, which contains lnks to every page not
-    defined by a procedurally generated query.
+    """ A function to render the sitemap, which contains links to every page
+    not defined by a procedurally generated query.
     """
     return render_template("sitemap.html", title="KSP Mission Library")
 
@@ -198,7 +198,7 @@ def page_not_found_error(error):
 
 
 @app.errorhandler(500)
-def internal_servef_error(error):
+def internal_server_error(error):
     """A function to render a page when there is a server side error."""
     return render_template("500.html")
 
