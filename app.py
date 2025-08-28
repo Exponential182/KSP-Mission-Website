@@ -3,6 +3,7 @@ from os import path
 
 from flask import Flask, render_template, request
 
+rounding_precision = 3
 app = Flask(__name__)
 # Generate the absolute path to the database to prevent the path leading 
 # to the wrong database or creating an empty one and finding nothing.
@@ -45,7 +46,7 @@ def mission_data_formatter(data_row: list):
         if callable(value) and data_row[key]: #Checks for a function reference.
             data_row[key] = value(data_row[key])
         elif isinstance(value, float) and isinstance(data_row[key], (int, float)):
-            data_row[key] = round(data_row[key] * value, 3)
+            data_row[key] = round(data_row[key] * value, rounding_precision)
     formatted_datarow = list(zip(columns, data_row))
     return formatted_datarow
 
@@ -94,6 +95,8 @@ def mission(mission_id: int):
     mission_query = f"SELECT * FROM Mission WHERE id = {mission_id}"
     results = lookup_query(mission_query)
     if len(results) > 0:
+        # Check if the result exists and turn it into a list for data
+
         results = list(results[0])
     else:
         return render_template("404.html", 
@@ -111,8 +114,9 @@ def mission(mission_id: int):
         for data in stages_info:
             if isinstance(data[3], (int,float)) and isinstance(data[4], (int, float)):
                 new_stages_info.append(
-                    (data[0], data[1], data[2], round((data[3]+data[4])/2, 4),
-                     data[5], data[6])
+                    (data[0], data[1], data[2],
+                     round((data[3]+data[4])/2, rounding_precision), data[5],
+                     data[6])
                 )
             else:
                 new_stages_info.append(
@@ -165,7 +169,7 @@ def stages():
 
 @app.route("/license")
 def license():
-    """ A Function to render the mod license page. """
+    """ A Function to render the mod license page."""
     return render_template("license.html", title="KSP Mission Library")
 
 
