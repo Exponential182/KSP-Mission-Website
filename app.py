@@ -22,10 +22,10 @@ def lookup_query(query: str):
 
 
 def mission_data_formatter(data_row: list):
-    """ A Function to adjust the formatting of the data from the mission query
-    to a useful format.
+    """ Adjusts the formatting of the data from the mission query
+    and pairs it to it's column name.
     """
-    # References are based on the databse structure so need to be updated if
+    # References are based on the database structure so need to be updated if
     # more columns are added to the database
     columns = [
         False, False, "Mission Goal", "Crew Count",
@@ -49,8 +49,8 @@ def mission_data_formatter(data_row: list):
         elif (isinstance(value, float) and
                 isinstance(data_row[key], (int, float))):
             data_row[key] = round(data_row[key] * value, 3)
-    formatted_datarow = list(zip(columns, data_row))
-    return formatted_datarow
+    formatted_data_row = list(zip(columns, data_row))
+    return formatted_data_row
 
 
 def seconds_to_time(seconds: float):
@@ -82,8 +82,8 @@ def missions():
     """ A Function to render the dynamic page containing all of the missions
     stored in the database.
     """
-    query: str = ("SELECT name, launch_vehicle, mission_goal,"
-                  "payload_image_reference, id FROM Mission ORDER BY name ASC")
+    query: str = ("SELECT name, launch_vehicle, mission_goal,\
+                  payload_image_reference, id FROM Mission ORDER BY name ASC")
     results = lookup_query(query)
     return render_template("missions.html", title="KSP Mission Library",
                            data=results, binary_true=True)
@@ -100,7 +100,7 @@ def mission(mission_id: int):
         results = list(results[0])
     else:
         return render_template("404.html",
-                               message="The mission does note exist.",
+                               message="The mission does not exist.",
                                url=request.url)
     mission_info = mission_data_formatter(results)
 
@@ -142,7 +142,7 @@ def mission(mission_id: int):
 
 @app.route("/engines")
 def engines():
-    """ A Function to render the dynamic page containing all of the enignes
+    """ A Function to render the dynamic page containing all of the engines
     stored in the database.
     """
     query: str = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,"
@@ -177,7 +177,7 @@ def license():
 
 @app.route("/glossary")
 def glossary():
-    """ A Function to render the glossary of all used techinal terms. """
+    """ A Function to render the glossary of all used technical terms. """
     return render_template("glossary.html", title="KSP Mission Library")
 
 
