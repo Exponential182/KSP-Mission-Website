@@ -193,7 +193,8 @@ def sitemap():
 def page_not_found_error(error):
     """ A function to render the 404 page when an invalid link is caused."""
     url = request.url
-    return render_template("404.html", message="The url does not exist.",
+    message = "The url does not exist/is invalid."
+    return render_template("404.html", message=message,
                            url=url), 404
 
 
