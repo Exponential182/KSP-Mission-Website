@@ -370,3 +370,12 @@ h1, h2, h3, h4, h5, h6, p{
     vertical-align: middle;
     text-align: center;
 }
+
+.license-link{
+    color: #C5C5C5;
+    font-size: 0.7em;
+}
+
+.mod-link{
+    color: #C5C5C5;
+}
