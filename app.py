@@ -181,14 +181,6 @@ def glossary():
     return render_template("glossary.html", title="KSP Mission Library")
 
 
-@app.route("/sitemap")
-def sitemap():
-    """ A function to render the sitemap, which contains links to every page
-    not defined by a procedurally generated query.
-    """
-    return render_template("sitemap.html", title="KSP Mission Library")
-
-
 @app.errorhandler(404)
 def page_not_found_error(error):
     """ A function to render the 404 page when an invalid link is caused."""

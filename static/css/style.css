@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p{
 /* Footer */
 .footer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     background-color: #2E573A;
     color: #F5F5F5;
