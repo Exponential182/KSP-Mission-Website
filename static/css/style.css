@@ -267,13 +267,13 @@ h1, h2, h3, h4, h5, h6, p{
     background: linear-gradient(#3357C1, #66B4FF, #3357C1);
     padding-top: 6vh;
     padding-bottom: 6vh;
+    color: #F5F5F5;
 }
 
 .mission-header{
     text-align: center;
     font-size: 4vw;
     color: #F5F5F5;
-    -webkit-text-stroke: 0.2vw #0D0D0D;
     padding: 2vw 2vh;
     background: linear-gradient(#2E573A, #3357C1);
 }
@@ -284,6 +284,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 .mission-payload-image{
     border: #2E573A 0.5vw solid;
+    border-radius: 0.4em;
 }
 
 .unbal-three-column-grid{
@@ -301,7 +302,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .info-list{
-    border: #0D0D0D solid  0.3vw;
+    border: #F5F5F5 solid  0.3vw;
     border-radius: 0.8em;
     font-size: 1.4vw;
     text-align: center;
