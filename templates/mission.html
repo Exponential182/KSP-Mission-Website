@@ -7,7 +7,7 @@
             <div class="info-list"> {# Expand and store all the information about the mission. #}
                 {% for name, info in mission_data %}
                     {% if name and info%}
-                        <p>{{name}}: {{info}}</p>
+                        <p><b>{{name}}</b>: {{info}}</p>
                     {% endif %}
                 {% endfor %}
             </div>
