@@ -1,0 +1,29 @@
+{%extends "layout.html"%}
+{% block content %}
+<h2 class="object-header">{{stage_data[1][1]}}</h2>
+<section class="object-info">
+    <div class="unbal-three-column-grid"> {# A grid structure to expand and display all the information about a stage and its dimensions #}
+        <div>
+            <div class="info-list"> {# Expand and store all the information about the stage.#}
+                {% for name, info in stage_data %}
+                    {% if name and info%}
+                        <p>{{name}}: {{info}}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div>
+            <div class="summary-text">
+                <h2>Stage Report:</h2>
+                <p>{{stage_data[2][1]}}<p>
+            </div>
+        </div>
+        <div>
+            <div class="object-image-container">
+                <img src="/{{stage_data[9][1]}}" alt="The {{stage_data[1][1]}}" class="object-image">
+                <h4></h4>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

@@ -21,6 +21,14 @@ def lookup_query(query: str):
     return results
 
 
+def numerical_type(input_variable):
+    """ Checks if the variable is a numerical type (float or int) """
+    if isinstance(input_variable, (float, int)):
+        return True
+    else:
+        return False
+
+
 def mission_data_formatter(data_row: list):
     """ Adjusts the formatting of the data from the mission query
     and pairs it to it's column name.
@@ -46,11 +54,33 @@ def mission_data_formatter(data_row: list):
         # ensure that the correct operation is run
         if callable(value) and data_row[key]:
             data_row[key] = value(data_row[key])
-        elif (isinstance(value, float) and
-                isinstance(data_row[key], (int, float))):
+        elif numerical_type(value) and numerical_type(data_row[key]):
             data_row[key] = round(data_row[key] * value, 3)
     formatted_data_row = list(zip(columns, data_row))
     return formatted_data_row
+
+
+def stage_data_formatter(data_row: list):
+    """ Adjusts the formatting of the data from the mission query
+    and pairs it to it's column name.
+    """
+    # References are based on the database structure so need to be updated if
+    # more columns are added to the database
+    columns = [
+        False, False, False, "Top Diameter", "Bottom Diameter",
+        "Average Diameter", "Length", "Engine Count", "Tank Material/Type",
+        False
+    ]
+
+    # Calculates the average stage diameter if possible otherwise returns N/A
+    if numerical_type(data_row[3]) and numerical_type(data_row[4]):
+        formatted_data = data_row[:5]
+        formatted_data.append(round((data_row[3] + data_row[4])/2, 4))
+        formatted_data.extend(data_row[5:])
+
+    formatted_data = list(zip(columns, formatted_data))
+    print(formatted_data)
+    return formatted_data
 
 
 def seconds_to_time(seconds: float):
@@ -167,6 +197,23 @@ def stages():
     ]
     return render_template("stages.html", title="KSP Mission Library",
                            data=formatted_results)
+
+
+@app.route("/stage/<int:stage_id>")
+def stage(stage_id: int):
+    stage_query = f"SELECT * FROM Stage WHERE id = {stage_id}"
+    stage_results = lookup_query(stage_query)
+    if len(stage_results) > 0:
+        stage_results = list(stage_results[0])
+    else:
+        return render_template("404.html",
+                               message="The stage does not exist.",
+                               url=request.url)
+
+    stage_results = stage_data_formatter(stage_results)
+
+    return render_template("stage.html", title="KSP Mission Library",
+                           stage_data=stage_results)
 
 
 @app.route("/license")
