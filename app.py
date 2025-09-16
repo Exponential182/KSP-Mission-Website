@@ -60,6 +60,27 @@ def mission_data_formatter(data_row: list):
     return formatted_data_row
 
 
+def engine_data_formatter(data_row: list):
+    """ Adjusts the format of the data from the engine query to make the logic
+    in the HTML template simpler.
+    """
+    # References are based on the database structure so need to be updated if
+    # more columns are added to the database
+    columns = [
+        False, False, "Fuel Type", "Fuel Ratio", "Ignitions", "Pressure Fed",
+        "Thrust (Sea Level) (kN)", "ISP (Sea Level) (s)",
+        "Thrust (Vacuum) (kN)", "ISP (Vacuum) (s)", False
+    ]
+    # Converts if an engine is pressure fed from an integer to a word to make
+    # it more descriptive.
+    if data_row[5] == 0:
+        data_row[5] = "No"
+    elif data_row[5] == 1:
+        data_row[5] = "Yes"
+    formatted_data = list(zip(columns, data_row))
+    return formatted_data
+
+
 def stage_data_formatter(data_row: list):
     """ Adjusts the formatting of the data from the mission query
     and pairs it to it's column name.
@@ -183,6 +204,22 @@ def engines():
                            data=results)
 
 
+@app.route("/engine/<int:engine_id>")
+def engine(engine_id):
+    """ Collect the data for and render the engine specific page."""
+    engine_query = f"SELECT * FROM Engine WHERE id = {engine_id}"
+    engine_results = lookup_query(engine_query)
+    if len(engine_results) > 0:
+        engine_results = list(engine_results[0])
+    else:
+        return render_template("404.html", url=request.url,
+                               message="The engine does not exist.")
+
+    engine_data = engine_data_formatter(engine_results)
+    return render_template("engine.html", title="KSP Mission Library",
+                           engine_data=engine_data)
+
+
 @app.route("/stages")
 def stages():
     """ A Function to render the dynamic page containing all of the stages
@@ -201,6 +238,7 @@ def stages():
 
 @app.route("/stage/<int:stage_id>")
 def stage(stage_id: int):
+    """ Collect the data for and render the stage specific page."""
     stage_query = f"SELECT * FROM Stage WHERE id = {stage_id}"
     stage_results = lookup_query(stage_query)
     if len(stage_results) > 0:
