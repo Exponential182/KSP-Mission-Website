@@ -212,8 +212,15 @@ def stage(stage_id: int):
 
     stage_results = stage_data_formatter(stage_results)
 
+    engine_query: str = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL,"
+                         "isp_Vac, ignition_count, image_reference, id FROM "
+                         "Engine WHERE id in (SELECT engine_id FROM "
+                         f"StageEngine WHERE stage_id = {stage_id})")
+    engine_results = lookup_query(engine_query)
+
     return render_template("stage.html", title="KSP Mission Library",
-                           stage_data=stage_results)
+                           stage_data=stage_results,
+                           engine_data=engine_results)
 
 
 @app.route("/license")
