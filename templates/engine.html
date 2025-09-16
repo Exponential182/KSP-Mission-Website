@@ -6,7 +6,7 @@
         <div class="info-list"> {# Expand and store all the information about the engine.#}
             {% for name, info in engine_data %}
                 {% if name and info%}
-                    <p>{{name}}: {{info}}</p>
+                    <p><b>{{name}}</b>: {{info}}</p>
                 {% endif %}
             {% endfor %}
         </div>
