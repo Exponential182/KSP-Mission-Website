@@ -5,16 +5,14 @@ from flask import Flask, render_template, request
 
 rounding_precision = 3
 app = Flask(__name__)
-# Generate the absolute path to the database to prevent the path leading
-# to the wrong database or creating an empty one and finding nothing.
+# Generate the absolute path to the database to remove dependency on where the
+# file is run.
 runtime_directory = path.abspath(path.dirname(__file__))
 db_path = path.join(runtime_directory, "ksp.db")
 
 
 def lookup_query(query: str):
-    """ A function to simplify the execution of pre-sanitised and
-    generated queries.
-    """
+    """ Runs a SQL query and returns the results. """
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
     cursor.execute(query)
@@ -23,7 +21,9 @@ def lookup_query(query: str):
 
 
 def numerical_type(input_variable):
-    """ Checks if the variable is a numerical type (float or int) """
+    """ Simplifies checking if floating point operations can be performed on a
+    variable.
+    """
     if isinstance(input_variable, (float, int)):
         return True
     else:
@@ -31,8 +31,8 @@ def numerical_type(input_variable):
 
 
 def mission_data_formatter(data_row: list):
-    """ Adjusts the formatting of the data from the mission query
-    and pairs it to it's column name.
+    """ Pairs the data from the mission table to its column name and
+    transforms some of the data to be more useful.
     """
     # References are based on the database structure so need to be updated if
     # more columns are added to the database
@@ -51,7 +51,7 @@ def mission_data_formatter(data_row: list):
         14: seconds_to_time
     }
     for key, value in multiplicative_transforms.items():
-        # Checks if a function reference or conversion factory is stored to
+        # Checks if a function reference or conversion factor is stored to
         # ensure that the correct operation is run
         if callable(value) and data_row[key]:
             data_row[key] = value(data_row[key])
@@ -62,8 +62,8 @@ def mission_data_formatter(data_row: list):
 
 
 def engine_data_formatter(data_row: list):
-    """ Adjusts the format of the data from the engine query to make the logic
-    in the HTML template simpler.
+    """ Pairs the data from the engine table to its column name and
+    to simply the logic on the HTML template.
     """
     # References are based on the database structure so need to be updated if
     # more columns are added to the database
@@ -83,8 +83,8 @@ def engine_data_formatter(data_row: list):
 
 
 def stage_data_formatter(data_row: list):
-    """ Adjusts the formatting of the data from the mission query
-    and pairs it to it's column name.
+    """ Pairs the data from the stage table to its column name to simply the
+    logic on the HTML template.
     """
     # References are based on the database structure so need to be updated if
     # more columns are added to the database
@@ -99,6 +99,10 @@ def stage_data_formatter(data_row: list):
         formatted_data = data_row[:5]
         formatted_data.append(round((data_row[3] + data_row[4])/2, 4))
         formatted_data.extend(data_row[5:])
+    else:
+        formatted_data = data_row[:5]
+        formatted_data.append(None)
+        formatted_data.extend(data_row[5:])
 
     formatted_data = list(zip(columns, formatted_data))
     print(formatted_data)
@@ -106,13 +110,13 @@ def stage_data_formatter(data_row: list):
 
 
 def seconds_to_time(seconds: float):
-    """ A function to convert the any values of time in seconds into a
-    ydhms (years, days, hours, minutes, seconds) format.
+    """ Convert  time in seconds into a string using the ydhms format.
+    (years, days, hours, minutes, seconds)
     """
     time_in_seconds = {31536000: "y", 86400: "d", 3600: "h", 60: "m"}
     output_time_string = ""
     for multiplier, time_string in time_in_seconds.items():
-        if seconds // multiplier == 0:
+        if seconds < multiplier:
             continue
         else:
             num_of_time_intervals = seconds // multiplier
@@ -125,17 +129,17 @@ def seconds_to_time(seconds: float):
 
 @app.route("/")
 def home():
-    """ A Function to render the static home page to the site. """
+    """ Render the  home page of the site. """
     return render_template("home.html", title="KSP Mission Library")
 
 
 @app.route("/missions")
 def missions():
-    """ A Function to render the dynamic page containing all of the missions
+    """ Gather the data for and render the page containing all of the missions
     stored in the database.
     """
-    query: str = ("SELECT name, launch_vehicle, mission_goal,\
-                  payload_image_reference, id FROM Mission ORDER BY name ASC")
+    query: str = ("SELECT name, launch_vehicle, mission_goal,"
+                  "payload_image_reference, id FROM Mission ORDER BY name ASC")
     results = lookup_query(query)
     return render_template("missions.html", title="KSP Mission Library",
                            data=results, binary_true=True)
@@ -143,14 +147,12 @@ def missions():
 
 @app.route("/mission/<int:mission_id>")
 def mission(mission_id: int):
-    """ A Function to gather and format the data on a mission then render the
-    HTML template to display the mission data to the end user.
+    """ Gather  and format the data on a mission before rendering the HTML
+    template to display the mission data to the end user.
     """
     mission_query = f"SELECT * FROM Mission WHERE id = {mission_id}"
     results = lookup_query(mission_query)
     if len(results) > 0:
-        # Check if the result exists and turn it into a list for data
-
         results = list(results[0])
     else:
         return render_template("404.html",
@@ -158,11 +160,14 @@ def mission(mission_id: int):
                                url=request.url)
     mission_info = mission_data_formatter(results)
 
+    # Gather the data on the stages which were used on the mission.
     stages_query: str = ("SELECT id, name, length, top_diameter,"
                          "bottom_diameter, material, image_reference FROM"
                          " Stage WHERE id in (SELECT stage_id FROM"
                          f" MissionStage WHERE mission_id = {mission_id})")
     stages_info = lookup_query(stages_query)
+
+    # Format the data on the stages to be consistent with the stages page.
     if len(stages_info) > 0:
         new_stages_info = []
         for data in stages_info:
@@ -179,6 +184,8 @@ def mission(mission_id: int):
                 )
         stages_info = new_stages_info
 
+    # Recall the images related to the mission and format them for the image
+    # carousel.
     images_query: str = ("SELECT caption, url, id FROM Image WHERE id in"
                          "(SELECT image_id FROM MissionImage WHERE mission_id"
                          f" = {mission_id})")
@@ -197,8 +204,7 @@ def mission(mission_id: int):
 
 @app.route("/engines")
 def engines():
-    """ A Function to render the dynamic page containing all of the engines
-    stored in the database.
+    """ Gather the data for then render the engines page.
     """
     query: str = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL, isp_Vac,"
                   "ignition_count, image_reference, id FROM Engine ORDER BY"
@@ -226,9 +232,7 @@ def engine(engine_id):
 
 @app.route("/stages")
 def stages():
-    """ A Function to render the dynamic page containing all of the stages
-    stored in the database.
-    """
+    """ Gather and format the data to render the all stages page."""
     query: str = ("SELECT id, name, length, top_diameter, bottom_diameter,"
                   "image_reference FROM Stage ORDER BY name ASC")
     results = lookup_query(query)
@@ -251,9 +255,9 @@ def stage(stage_id: int):
         return render_template("404.html",
                                message="The stage does not exist.",
                                url=request.url)
-
     stage_results = stage_data_formatter(stage_results)
 
+    # Gather data for any engines used in the stage.
     engine_query: str = ("SELECT name, fuel_type, fuel_ratio, thrust_ASL,"
                          "isp_Vac, ignition_count, image_reference, id FROM "
                          "Engine WHERE id in (SELECT engine_id FROM "
@@ -267,20 +271,19 @@ def stage(stage_id: int):
 
 @app.route("/license")
 def license():
-    """ A Function to render the mod license page."""
+    """ Render the mod license page."""
     return render_template("license.html", title="KSP Mission Library")
 
 
 @app.route("/glossary")
 def glossary():
-    """ A Function to render the glossary of all used technical terms. """
+    """ Render the glossary of all used technical terms. """
     return render_template("glossary.html", title="KSP Mission Library")
 
 
 @app.errorhandler(404)
 def page_not_found_error(error):
-    """ A function to render the 404 page when a page cannot be rendered or
-    found."""
+    """ Render the 404 page when an invalid url is sent to the server."""
     url = request.url
     message = "The url does not exist/is invalid."
     return render_template("404.html", message=message,
@@ -289,7 +292,7 @@ def page_not_found_error(error):
 
 @app.errorhandler(500)
 def internal_server_error(error):
-    """A function to render a page when there is a server side error."""
+    """A function to render a error page after a server side error."""
     return render_template("500.html")
 
 
