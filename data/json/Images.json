@@ -8,7 +8,7 @@
     {
         "id": "2",
         "url": "static/images/inflight-images/luna-14/Luna-14-ascent.png",
-        "caption": "The Luna 14 vehicle on the launch pad, awaiting launch.",
+        "caption": "The UR-350A beginning its turn, overlooking the space center. The vehicle suffered an engine failure minutes later, ending the mission before it reached orbit.",
         "related_mission_ids": "[1]"
     },
     {
@@ -44,7 +44,7 @@
     {
         "id": "8",
         "url": "static/images/inflight-images/luna-15/Luna-15-deep-space.png",
-        "caption": "The Luna 15 spacecraft travelling to the Moon, looking back on Earth.",
+        "caption": "The Luna 15 spacecraft traveling to the Moon, looking back on Earth.",
         "related_mission_ids": "[2]"
     },
     {
@@ -307,7 +307,7 @@
     },
     {
         "id": "52",
-        "url": "static/images/inflight-images/luna-19/Luna-19-seperation.png",
+        "url": "static/images/inflight-images/luna-19/Luna-19-separation.png",
         "caption": "The Luna 19 network and its Pegasus-C kick stage are released from the URS-350-3A.",
         "related_mission_ids": "[9]"
     },
