@@ -21,3 +21,9 @@ img{
     border-radius: 5rem;
     align-items: center;
 }
+
+.invalid-url{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    overflow-wrap: anywhere;
+}

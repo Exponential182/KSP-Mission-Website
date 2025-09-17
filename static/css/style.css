@@ -336,11 +336,12 @@ h1, h2, h3, h4, h5, h6, p{
 
 .image-slide{
     border: #F5F5F5 0.2vw solid;
+    text-align: center;
+    background-color: #2E573A;
 }
 
 .image-slide-size-reg{
-    width: 55vw;
-    max-width: 55vw;
+    max-height: 31vw;
 }
 
 .image-gallery{

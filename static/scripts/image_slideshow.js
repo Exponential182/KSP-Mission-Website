@@ -12,7 +12,6 @@ function go_to_slide(n) {
     let slides = document.getElementsByClassName("image-slide")
     let left_arrows = document.getElementsByClassName("previous")
     let right_arrows = document.getElementsByClassName("next")
-    console.log(n)
     if (n < 0) {
         slide_index = 0
     } else if (n >= slides.length) {
