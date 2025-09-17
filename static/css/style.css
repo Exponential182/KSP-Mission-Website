@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6, p{
 /* Footer */
 .footer{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     background-color: #2E573A;
     color: #F5F5F5;
@@ -262,15 +262,15 @@ h1, h2, h3, h4, h5, h6, p{
     width: 20vw;
 }
 
-/* Mission Specific Page (Maybe all Specific Pages) */
-.mission-info{
+/* Object Specific Page (Missions, Stages, and Engines are considered objects) */
+.object-info{
     background: linear-gradient(#3357C1, #66B4FF, #3357C1);
     padding-top: 6vh;
     padding-bottom: 6vh;
     color: #F5F5F5;
 }
 
-.mission-header{
+.object-header{
     text-align: center;
     font-size: 4vw;
     color: #F5F5F5;
@@ -278,11 +278,11 @@ h1, h2, h3, h4, h5, h6, p{
     background: linear-gradient(#2E573A, #3357C1);
 }
 
-.mission-payload{
+.object-image-container{
     text-align: center;
 }
 
-.mission-payload-image{
+.object-image{
     border: #2E573A 0.5vw solid;
     border-radius: 0.4em;
 }
@@ -306,6 +306,7 @@ h1, h2, h3, h4, h5, h6, p{
     border-radius: 0.8em;
     font-size: 1.4vw;
     text-align: center;
+    height: fit-content;
 }
 
 .info-list p{
@@ -330,6 +331,8 @@ h1, h2, h3, h4, h5, h6, p{
     line-height: 1.7em;
 }
 
+
+/* Image Carousel - based on w3schools image slideshow tutorial */
 .full-size-image-section{
     line-height: 0%;
 }
@@ -371,4 +374,14 @@ h1, h2, h3, h4, h5, h6, p{
     color: #F5F5F5;
     vertical-align: middle;
     text-align: center;
+}
+
+/* Mod Licensing */
+.license-link{
+    color: #C5C5C5;
+    font-size: 0.7em;
+}
+
+.mod-link{
+    color: #C5C5C5;
 }
