@@ -2,7 +2,7 @@
 {% block content %}
 <h2 class="object-header">{{engine_data[1][1]}}</h2>
 <section class="object-info">
-    <div class="unbal-three-column-grid" style="background: none;"> {# A grid structure to expand and display all the information about a engine and its performance #}
+    <div class="two-column-grid" style="background: none;"> {# A grid structure to expand and display all the information about a engine and its performance #}
         <div class="info-list"> {# Expand and store all the information about the engine.#}
             {% for name, info in engine_data %}
                 {% if name and info%}

@@ -2,7 +2,7 @@
 {% block content %}
 <h2 class="object-header">{{stage_data[1][1]}}</h2>
 <section class="object-info">
-    <div class="unbal-three-column-grid"> {# A grid structure to expand and display all the information about a stage and its dimensions #}
+    <div class="unbal-two-column-grid"> {# A grid structure to expand and display all the information about a stage and its dimensions #}
         <div>
             <div class="info-list"> {# Expand and store all the information about the stage.#}
                 {% for name, info in stage_data %}
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="three-column-grid" style="background: none;">
+    <div class="two-column-grid" style="background: none;">
         {%for engine in engine_data%}
             <div class="info-card info-card-two-column">
                 <img src="/{{engine[6]}}" class="responsive-image" alt="Engine Image">

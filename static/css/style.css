@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6, p{
     height: fit-content;
     margin: auto;
     text-align: center;
-    box-shadow: 0.6rem 0.4rem 0.4rem #162654;
+    box-shadow: 0rem 0rem 1rem #081327;
 }
 
 .home-page-redirect-card a{
@@ -136,6 +136,7 @@ h1, h2, h3, h4, h5, h6, p{
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: linear-gradient(#162654, #3357C1, #162654);
+    padding: 2vw;
 }
 
 .two-column-column{
@@ -203,7 +204,7 @@ h1, h2, h3, h4, h5, h6, p{
     height: fit-content;
     margin: auto;
     text-align: center;
-    box-shadow: 0.6rem 0.4rem 0.4rem #162654;
+    box-shadow: 0rem 0rem 1rem #081327;
 }
 
 .info-card div{
@@ -283,7 +284,7 @@ h1, h2, h3, h4, h5, h6, p{
 }
 
 .object-image{
-    border: #2E573A 0.5vw solid;
+    border: #F5F5F5 0.5vw solid;
     border-radius: 0.4em;
 }
 
