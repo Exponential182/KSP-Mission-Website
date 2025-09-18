@@ -338,6 +338,10 @@ h1, h2, h3, h4, h5, h6, p{
     line-height: 0%;
 }
 
+.image-gallery-heading{
+    padding-bottom: 2vw;
+}
+
 .image-slide{
     border: #F5F5F5 0.2vw solid;
     text-align: center;

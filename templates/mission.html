@@ -29,11 +29,12 @@
         <div class="mission-stage-summary">
             {% if stages_data|length == 0 %}
                 <div class="info-card">
-                    <h2>
+                    <h4>
                         There are no stages related to this mission in the library.
-                    </h2>
+                    </h4>
                 </div>
             {% else %}
+                <h4>The stages used in the mission.</h2>
                 {% for stage in stages_data %}
                     <div class="info-card">
                         <div>
@@ -59,6 +60,7 @@
                         </h2>
                     </div>    
                 {% else %}
+                    <h4 class="image-gallery-heading">{{mission_data[1][1]}} Image Gallery</h4>
                     {% for image in image_gallery_data %}
                         <div class="image-slide">
                             <img src="/{{image[1]}}" alt="This image failed to load" class="image-slide-size-reg">
