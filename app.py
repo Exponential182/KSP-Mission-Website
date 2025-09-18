@@ -294,7 +294,7 @@ def page_not_found_error(error):
 @app.errorhandler(500)
 def internal_server_error(error):
     """A function to render a error page after a server side error."""
-    return render_template("500.html")
+    return render_template("500.html", title="500 Error")
 
 
 if __name__ == '__main__':
