@@ -105,7 +105,6 @@ def stage_data_formatter(data_row: list):
         formatted_data.extend(data_row[5:])
 
     formatted_data = list(zip(columns, formatted_data))
-    print(formatted_data)
     return formatted_data
 
 
