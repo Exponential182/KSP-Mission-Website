@@ -20,26 +20,34 @@
         </div>
     </div>
     <div class="two-column-grid" style="background: none;">
-        {%for engine in engine_data%}
-            <div class="info-card info-card-two-column">
-                <img src="/{{engine[6]}}" class="responsive-image" alt="Engine Image">
-                <div>
-                    <h1>Name: <br> {{engine[0]}}</h1>
-                    <br>
-                    <h3>Fuel Type: <br> {{engine[1]}}</h3>
-                    <br>
-                    <h3>Fuel Ratio: <br> {{engine[2]}}</h3>
-                    <br>
-                    <h3>Thrust (Sea Level): <br> {{engine[3]}} kN</h3>
-                    <br>
-                    <h3>ISP (Vacuum): <br> {{engine[4]}} seconds</h3>
-                    <br>
-                    <h3>Ignitions: <br> {{engine[5]}}</h3>
-                    <br>
-                    <a href="/engine/{{engine[7]}}">More Details</a>
-                </div>
+        {% if engines_data|length == 0 %}
+            <div class="info-card">
+                <h4>
+                    There are no engines related to this stage in the library.
+                </h4>
             </div>
-    {%endfor%}
+        {% else %}
+            {%for engine in engine_data%}
+                <div class="info-card info-card-two-column">
+                    <img src="/{{engine[6]}}" class="responsive-image" alt="Engine Image">
+                    <div>
+                        <h1>Name: <br> {{engine[0]}}</h1>
+                        <br>
+                        <h3>Fuel Type: <br> {{engine[1]}}</h3>
+                        <br>
+                        <h3>Fuel Ratio: <br> {{engine[2]}}</h3>
+                        <br>
+                        <h3>Thrust (Sea Level): <br> {{engine[3]}} kN</h3>
+                        <br>
+                        <h3>ISP (Vacuum): <br> {{engine[4]}} seconds</h3>
+                        <br>
+                        <h3>Ignitions: <br> {{engine[5]}}</h3>
+                        <br>
+                        <a href="/engine/{{engine[7]}}">More Details</a>
+                    </div>
+                </div>
+            {%endfor%}
+        {%endif%}
         <div class="object-image-container">
             <img src="/{{stage_data[9][1]}}" alt="The {{stage_data[1][1]}}" class="object-image">
             <h4>{{stage_data[1][1]}}</h4>
