@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/error_handler.css">
-    <title>500 - Internal Server Error</title>
-</head>
-<body>
+{%extends "layout.html"%}
+{%block content%}
+<div class="error-handler">
     <h1>500 Internal Server Error</h1>
+    <br>
     <div>
         <h3>It appears the server has had a problem, please try again later.</h3>
         <p>We are sorry for any inconvenience this may cause.</p>
     </div>
+    <br>
     <div>
-         <img src="/static/images/decorative-images/Mars-spacecraft.png" alt="A Spacecraft over Mars">
+        <img class="error-page-image" src="/static/images/decorative-images/Mars-spacecraft.png" alt="A Spacecraft over Mars">
     </div>
     <br><br><br>
-</body>
-</html>
+</div>
+{%endblock%}

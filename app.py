@@ -157,7 +157,7 @@ def mission(mission_id: int):
     else:
         return render_template("404.html",
                                message="The mission does not exist.",
-                               url=request.url)
+                               url=request.url, title="404 Error")
     mission_info = mission_data_formatter(results)
 
     # Gather the data on the stages which were used on the mission.
@@ -223,7 +223,8 @@ def engine(engine_id):
         engine_results = list(engine_results[0])
     else:
         return render_template("404.html", url=request.url,
-                               message="The engine does not exist.")
+                               message="The engine does not exist.",
+                               title="404 Error")
 
     engine_data = engine_data_formatter(engine_results)
     return render_template("engine.html", title="KSP Mission Library",
@@ -254,7 +255,7 @@ def stage(stage_id: int):
     else:
         return render_template("404.html",
                                message="The stage does not exist.",
-                               url=request.url)
+                               url=request.url, title="404 Error")
     stage_results = stage_data_formatter(stage_results)
 
     # Gather data for any engines used in the stage.
@@ -287,7 +288,7 @@ def page_not_found_error(error):
     url = request.url
     message = "The url does not exist/is invalid."
     return render_template("404.html", message=message,
-                           url=url), 404
+                           url=url, title="404 Error"), 404
 
 
 @app.errorhandler(500)

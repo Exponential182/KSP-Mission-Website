@@ -385,3 +385,29 @@ h1, h2, h3, h4, h5, h6, p{
 .mod-link{
     color: #C5C5C5;
 }
+
+/* Error Handlers */
+.error-handler {
+    text-align: center;
+    font-family: "Open Sans", monospace;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #e5e5e5;
+    color: #0d0d0d;
+    font-size: auto;
+    font-size: 0.7em;
+    padding: 3vw;
+}
+
+.error-page-image{
+    width: 95%;
+    height: 95%;
+    border-radius: 5rem;
+    align-items: center;
+}
+
+.error-invalid-url{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    overflow-wrap: anywhere;
+}
